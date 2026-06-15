@@ -1,0 +1,40 @@
+---
+import Header from "./header.astro";
+import Button from "./button.astro";
+---
+
+<section class="relative min-h-screen overflow-hidden bg-neutral-200">
+  <Header />
+
+  <div class="absolute inset-y-0 right-20 flex w-full items-start justify-end pt-0 md:w-[74%]">
+    <div class="relative h-[calc(100%+3rem)] w-full -translate-y-12">
+      <img
+        src="/images/hero-copper-hair.png"
+        alt="Copper salon waves from behind"
+        class="h-full w-full object-cover object-center"
+        style="-webkit-mask-image: linear-gradient(to right, transparent 0%, black 46%, black 84%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 46%, black 84%, transparent 100%); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"
+      />
+      <div class="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-neutral-200 via-neutral-200/90 via-45% to-transparent"></div>
+      <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-neutral-200 via-neutral-200/30 to-transparent"></div>
+    </div>
+  </div>
+
+  <div class="relative z-10 mx-auto grid min-h-screen max-w-7xl items-center px-8 pt-36 md:grid-cols-2 md:px-16 md:items-start md:pt-30">
+    <div class="relative z-10 max-w-xl md:mt-8">
+      <p class="mb-6 text-xs font-bold uppercase tracking-[0.35em] text-orange-600">
+        Where style meets science
+      </p>
+
+      <h1 class="mb-6 text-6xl font-black uppercase leading-[0.95] tracking-normal text-black md:text-7xl lg:text-8xl">
+        Cut. Color. Confidence.
+      </h1>
+
+      <p class="mb-8 max-w-md text-base leading-7 text-neutral-700">
+        ROKK LAB is a modern hair salon dedicated to precision cuts,
+        lived-in color, and effortless style.
+      </p>
+
+      <Button href="#booking">Book Your Appointment</Button>
+    </div>
+  </div>
+</section>

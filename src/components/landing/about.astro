@@ -1,0 +1,81 @@
+---
+const highlights = [
+  {
+    title: "Cut",
+    image: "/images/service-cut.png",
+    description: "Precision cuts tailored to your style.",
+  },
+  {
+    title: "Color",
+    image: "/images/service-colour.png",
+    description: "Modern color techniques that enhance you.",
+  },
+  {
+    title: "Styling",
+    image: "/images/service-style.png",
+    description: "Blowouts, waves, and finishing touches.",
+  },
+  {
+    title: "Treatments",
+    image: "/images/service-treatment.png",
+    description: "Nourishing treatments for healthy hair.",
+  },
+];
+---
+
+<section id="about" class="bg-[#191919] text-white">
+  <div class="grid min-h-[28rem] lg:grid-cols-[1.05fr_0.8fr_1.2fr]">
+    <div class="min-h-[18rem] lg:min-h-full">
+      <img
+        src="/images/salon.png"
+        alt="ROKK LAB salon interior"
+        class="h-full w-full object-cover grayscale"
+      />
+    </div>
+
+    <div class="flex items-center px-8 py-14 md:px-16 lg:px-14">
+      <div>
+        <p class="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-orange-600">
+          About us
+        </p>
+
+        <h2 class="mb-7 text-4xl font-black uppercase leading-tight md:text-3xl">
+          Experts in beauty and precision.
+        </h2>
+
+        <p class="max-w-md text-base font-semibold leading-7 text-neutral-300">
+          At ROKK LAB, we blend creativity with technique to create hair that
+          looks effortless, modern, and tailored to you.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-center px-8 pb-14 md:px-16 lg:px-10 lg:py-14">
+      <div class="grid w-full grid-cols-2 gap-y-10 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
+        {
+          highlights.map((item, index) => (
+            <div
+              class={`flex flex-col items-center px-6 text-center ${
+                index === 0 ? "" : "xl:border-l xl:border-white/20"
+              } ${index % 2 === 1 ? "lg:border-l lg:border-white/20 xl:border-l" : ""}`}
+            >
+              <img
+                src={item.image}
+                alt=""
+                class="mb-5 h-16 w-16 object-contain"
+              />
+
+              <p class="text-sm font-black uppercase tracking-wide text-white">
+                {item.title}
+              </p>
+
+              <p class="mt-4 max-w-[10rem] text-sm font-semibold leading-6 text-neutral-300">
+                {item.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

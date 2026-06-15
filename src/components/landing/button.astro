@@ -1,0 +1,15 @@
+---
+const { href = "#", variant = "filled" } = Astro.props;
+
+const baseClasses =
+  "inline-flex items-center justify-center border px-8 py-4 text-xs font-bold uppercase tracking-wide transition";
+
+const variantClass =
+  variant === "outline"
+    ? "border-orange-600 text-black hover:bg-orange-600 hover:text-white"
+    : "border-orange-600 bg-orange-600 text-white hover:bg-black hover:border-black";
+---
+
+<a href={href} class={`${baseClasses} ${variantClass}`}>
+  <slot />
+</a>
