@@ -1,0 +1,141 @@
+---
+import Button from "./button.astro";
+import redBob from "../../assets/home/featured-looks/red-bob.jpg";
+import brondeWaves from "../../assets/home/featured-looks/bronde.png";
+import blondeWaves from "../../assets/home/featured-looks/blonde-waves.jpg";
+import blondeCurl from "../../assets/home/featured-looks/blond-curl.jpg";
+
+const bookingUrl =
+  "https://booking.clientdiary.com/?bookingsUrl=RokkLab&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn9FErYtiyf2PHYkbbmUEiDdfX4kKj7467IwK1oOtJ28Sg-mF-_6AGlJuuR6c_aem_wew15SLhLb1jQXxDGi8fpg";
+
+const looks = [
+  {
+    image: redBob,
+    alt: "Glossy red bob with soft face-framing layers",
+  },
+  {
+    image: brondeWaves,
+    alt: "Bronde hair styled in soft long waves",
+  },
+  {
+    image: blondeWaves,
+    alt: "Bright blonde hair styled in loose waves",
+  },
+  {
+    image: blondeCurl,
+    alt: "Dimensional blonde hair with polished curls",
+  },
+];
+---
+
+<section id="featured-looks" class="featured-looks bg-white" data-featured-looks>
+  <div class="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:px-16 lg:grid-cols-[0.9fr_2.15fr] lg:items-center lg:gap-12 lg:py-20">
+    <div class="max-w-md">
+      <p class="mb-6 text-xs font-bold uppercase tracking-[0.35em] text-orange-600">
+        Featured looks
+      </p>
+
+      <h2 class="text-4xl font-black uppercase leading-tight text-black sm:text-5xl lg:text-[3.35rem]">
+        Beautiful hair. Expertly crafted.
+      </h2>
+
+      <p class="mt-6 max-w-sm text-base font-semibold leading-7 text-neutral-600">
+        A collection of real transformations and signature looks by our team.
+      </p>
+
+      <div class="mt-9">
+        <Button href={bookingUrl} variant="outline">Book Now</Button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
+      {
+        looks.map((look, index) => (
+          <div
+            class="featured-look-card aspect-[317/485] overflow-hidden bg-neutral-100"
+            style={`--look-delay: ${index * 130}ms`}
+          >
+            <img
+              src={look.image.src}
+              alt={look.alt}
+              class="featured-look-image h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const featuredLooksSections = document.querySelectorAll<HTMLElement>("[data-featured-looks]");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const showFeaturedLooks = (section: HTMLElement) => {
+    section.classList.add("is-visible");
+  };
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    featuredLooksSections.forEach(showFeaturedLooks);
+  } else {
+    const featuredLooksObserver = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            showFeaturedLooks(entry.target as HTMLElement);
+            featuredLooksObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.36 }
+    );
+
+    featuredLooksSections.forEach((section) => featuredLooksObserver.observe(section));
+  }
+</script>
+
+<style>
+  .featured-look-card {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    transform: translateX(clamp(-11rem, -13vw, -4rem)) scale(0.96);
+    transform-origin: left center;
+    transition:
+      clip-path 780ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 520ms ease,
+      transform 780ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--look-delay);
+    will-change: clip-path, opacity, transform;
+  }
+
+  .featured-look-image {
+    animation: none;
+    transform: translateX(-12%) scale(1.08);
+    transform-origin: left center;
+    transition: transform 940ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--look-delay);
+    will-change: transform;
+  }
+
+  .featured-looks.is-visible .featured-look-card {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+
+  .featured-looks.is-visible .featured-look-image {
+    transform: translateX(0) scale(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .featured-look-card,
+    .featured-look-image {
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+      transform: none;
+      transition: none;
+      will-change: auto;
+    }
+  }
+</style>
