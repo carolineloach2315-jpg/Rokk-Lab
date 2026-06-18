@@ -1,95 +1,55 @@
 ---
-import salonImage from "../../assets/home/salon.png";
-import serviceColourIcon from "../../assets/icons/service-colour.png";
-import serviceCutIcon from "../../assets/icons/service-cut.png";
-import serviceStyleIcon from "../../assets/icons/service-style.png";
-import serviceTreatmentIcon from "../../assets/icons/service-treatment.png";
+import ServiceIcon from "./service-icon.astro";
 
 const highlights = [
   {
     title: "Cut",
-    image: serviceCutIcon,
+    icon: "cut",
     description: "Precision cuts tailored to your style.",
   },
   {
-    title: "Color",
-    image: serviceColourIcon,
-    description: "Modern color techniques that enhance you.",
+    title: "Colour",
+    icon: "colour",
+    description: "Modern colour techniques that enhance you.",
   },
   {
     title: "Styling",
-    image: serviceStyleIcon,
+    icon: "styling",
     description: "Blowouts, waves, and finishing touches.",
   },
   {
     title: "Treatments",
-    image: serviceTreatmentIcon,
+    icon: "treatments",
     description: "Nourishing treatments for healthy hair.",
   },
-];
+] as const;
 ---
 
-<section id="about" class="bg-[#191919] text-white">
-  <div class="grid lg:grid-cols-[0.9fr_0.9fr_1.55fr]">
-    <div class="relative min-h-72 overflow-hidden lg:min-h-[20rem]">
-      <img
-        src={salonImage.src}
-        alt="Rokk Lab salon interior"
-        class="absolute inset-0 h-full w-full object-cover grayscale"
-      />
-    </div>
-
-    <div class="flex items-start px-6 py-8 md:px-12 lg:px-10 lg:pt-8">
-      <div>
-        <p class="mb-4 text-xs font-bold uppercase tracking-[0.35em] text-orange-600">
-          About us
-        </p>
-
-        <h2 class="mb-5 text-2xl font-black uppercase leading-tight sm:text-3xl md:text-2xl">
-          Experts in beauty and precision.
-        </h2>
-
-        <p class="max-w-md text-sm font-semibold leading-6 text-neutral-300">
-          At Rokk Lab, we blend creativity with technique to create hair that
-          looks effortless, modern, and tailored to you.
-        </p>
-
-        <a
-          href="/about"
-          class="mt-6 inline-flex items-center justify-center border border-white bg-[#191919] px-8 py-4 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-white hover:text-black"
-        >
-          Learn More
-        </a>
-      </div>
-    </div>
-
-    <div class="flex items-center px-6 pb-10 md:px-16 lg:py-7 lg:pl-16 lg:pr-4 xl:pl-20 xl:pr-8">
-      <div class="grid w-full grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 xl:gap-x-8">
-        {
-          highlights.map((item, index) => (
-            <div
-              class={`service-card flex min-w-0 flex-col items-center px-3 text-center xl:px-4 ${
-                index === 0 ? "" : "xl:border-l xl:border-white/20"
-              } ${index % 2 === 1 ? "lg:border-l lg:border-white/20 xl:border-l" : ""}`}
-              style={`--icon-delay: ${index * 0.18}s`}
-            >
-              <img
-                src={item.image.src}
-                alt=""
-                class="service-icon mb-5 h-16 w-16 object-contain"
-              />
-
-              <p class="text-sm font-black uppercase tracking-wide text-white">
-                {item.title}
-              </p>
-
-              <p class="mt-3 max-w-[9.5rem] text-[11px] font-medium leading-5 text-neutral-300">
-                {item.description}
-              </p>
+<section id="about" class="bg-[#191919] px-6 py-14 text-white md:px-16 md:py-16">
+  <div class="mx-auto max-w-7xl">
+    <div class="grid grid-cols-2 gap-y-10 md:grid-cols-4" data-stagger-parent>
+      {
+        highlights.map((item, index) => (
+          <article
+            class={`flex min-w-0 flex-col items-center px-4 text-center md:px-8 ${
+              index === 0 ? "" : "md:border-l md:border-white/20"
+            }`}
+            data-stagger-card
+          >
+            <div class="mb-6 h-16 w-16 text-white md:h-20 md:w-20">
+              <ServiceIcon name={item.icon} />
             </div>
-          ))
-        }
-      </div>
+
+            <h2 class="text-base font-black uppercase tracking-wide text-white md:text-lg">
+              {item.title}
+            </h2>
+
+            <p class="mt-4 max-w-[11rem] text-sm font-semibold leading-6 text-neutral-300 md:text-base md:leading-7">
+              {item.description}
+            </p>
+          </article>
+        ))
+      }
     </div>
   </div>
 </section>

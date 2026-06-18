@@ -9,26 +9,6 @@
     animation: page-fade-in 0.7s ease both;
   }
 
-  main > section {
-    animation: section-rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
-  main > section:nth-child(2) {
-    animation-delay: 0.12s;
-  }
-
-  main > section:nth-child(3) {
-    animation-delay: 0.22s;
-  }
-
-  main > section:nth-child(4) {
-    animation-delay: 0.32s;
-  }
-
-  img {
-    animation: image-soft-in 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-
   a,
   button,
   input,
@@ -50,30 +30,6 @@
 
   to {
     opacity: 1;
-  }
-}
-
-@keyframes section-rise {
-  from {
-    opacity: 0;
-    transform: translateY(34px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes image-soft-in {
-  from {
-    opacity: 0;
-    transform: scale(1.04);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 

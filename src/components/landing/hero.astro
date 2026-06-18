@@ -4,7 +4,7 @@ import Button from "./button.astro";
 import heroCopperHair from "../../assets/home/hero-copper-hair.png";
 ---
 
-<section class="relative min-h-screen overflow-hidden bg-neutral-200">
+<section class="relative min-h-screen overflow-hidden bg-neutral-200" data-hero-scroll-section>
   <Header />
 
   <div class="pointer-events-none absolute inset-y-0 right-0 hidden w-full items-start justify-end pt-0 md:right-20 md:flex md:w-[74%]">
@@ -13,6 +13,7 @@ import heroCopperHair from "../../assets/home/hero-copper-hair.png";
         src={heroCopperHair.src}
         alt="Copper salon waves from behind"
         class="h-full w-full object-cover object-center"
+        data-hero-scroll-image
         style="-webkit-mask-image: linear-gradient(to right, transparent 0%, black 46%, black 84%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 46%, black 84%, transparent 100%); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"
       />
       <div class="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-neutral-200 via-neutral-200/90 via-45% to-transparent"></div>
@@ -32,10 +33,23 @@ import heroCopperHair from "../../assets/home/hero-copper-hair.png";
 
       <p class="mb-8 max-w-md text-sm leading-7 text-neutral-700 sm:text-base">
         Rokk Lab is a modern hair salon dedicated to precision cuts,
-        lived-in color, and effortless style.
+        lived-in colour, and effortless style.
       </p>
 
       <Button href="https://booking.clientdiary.com/?bookingsUrl=RokkLab&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn9FErYtiyf2PHYkbbmUEiDdfX4kKj7467IwK1oOtJ28Sg-mF-_6AGlJuuR6c_aem_wew15SLhLb1jQXxDGi8fpg">Book Your Appointment</Button>
     </div>
   </div>
 </section>
+
+<style>
+  [data-hero-scroll-image] {
+    transform-origin: center center;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-hero-scroll-image] {
+      will-change: auto;
+    }
+  }
+</style>
