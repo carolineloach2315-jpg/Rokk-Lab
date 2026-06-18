@@ -1,6 +1,7 @@
 ---
 import Header from "./header.astro";
 import Button from "./button.astro";
+import heroCopperHair from "../../assets/home/hero-copper-hair.png";
 ---
 
 <section class="relative min-h-screen overflow-hidden bg-neutral-200">
@@ -9,7 +10,7 @@ import Button from "./button.astro";
   <div class="pointer-events-none absolute inset-y-0 right-0 hidden w-full items-start justify-end pt-0 md:right-20 md:flex md:w-[74%]">
     <div class="relative h-[calc(100%+3rem)] w-full -translate-y-12">
       <img
-        src="/images/hero-copper-hair.png"
+        src={heroCopperHair.src}
         alt="Copper salon waves from behind"
         class="h-full w-full object-cover object-center"
         style="-webkit-mask-image: linear-gradient(to right, transparent 0%, black 46%, black 84%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 46%, black 84%, transparent 100%); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"

@@ -1,5 +1,6 @@
 ---
 import Button from "./button.astro";
+import rokkLabLogo from "../../assets/logos/rokk-lab-logo.png";
 
 const currentPath = Astro.url.pathname;
 
@@ -15,7 +16,7 @@ const navItems = [
   <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-5 md:flex-nowrap">
   <a href="/" aria-label="Rokk Lab home">
   <img
-    src="/images/rokk-lab-logo.png"
+    src={rokkLabLogo.src}
     alt="Rokk Lab"
     class="h-12 w-auto md:h-16"
   />

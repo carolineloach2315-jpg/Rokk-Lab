@@ -22,6 +22,10 @@ Use `.astro` components for page and UI markup. Follow the existing two-space in
 
 No dedicated test runner is currently configured. For every change, run `bun build` before opening a PR to catch Astro, TypeScript, and bundling issues. For visual or layout changes, also run `bun dev` or `bun preview` and check the affected routes in a browser. If tests are added later, place them near the feature they cover or under a clear `tests/` directory, and document the new command in `package.json`.
 
+## Agent-Specific Design Instructions
+
+Before changing UI, page content structure, styling, imagery, or frontend behavior, read `design/design.md`, `design/spec.md`, and `design/style.md`. Treat these files as the source of truth for the site architecture, intended behavior, and visual direction. If a project design skill is installed and exposed in the current environment, use it before making design or frontend implementation decisions. Keep new work aligned with the existing Astro component patterns, Tailwind styling approach, and Rokk Lab brand direction.
+
 ## Commit & Pull Request Guidelines
 
 Recent history uses short, imperative commits, often with a `chore:` prefix, for example `chore: update file structure`. Keep commit subjects concise and focused on one change. Pull requests should include a brief summary, the routes or components changed, verification steps such as `bun build`, and screenshots for visible UI updates. Link related issues or project tasks when available.

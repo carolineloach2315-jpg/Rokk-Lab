@@ -1,23 +1,29 @@
 ---
+import salonImage from "../../assets/home/salon.png";
+import serviceColourIcon from "../../assets/icons/service-colour.png";
+import serviceCutIcon from "../../assets/icons/service-cut.png";
+import serviceStyleIcon from "../../assets/icons/service-style.png";
+import serviceTreatmentIcon from "../../assets/icons/service-treatment.png";
+
 const highlights = [
   {
     title: "Cut",
-    image: "/images/service-cut.png",
+    image: serviceCutIcon,
     description: "Precision cuts tailored to your style.",
   },
   {
     title: "Color",
-    image: "/images/service-colour.png",
+    image: serviceColourIcon,
     description: "Modern color techniques that enhance you.",
   },
   {
     title: "Styling",
-    image: "/images/service-style.png",
+    image: serviceStyleIcon,
     description: "Blowouts, waves, and finishing touches.",
   },
   {
     title: "Treatments",
-    image: "/images/service-treatment.png",
+    image: serviceTreatmentIcon,
     description: "Nourishing treatments for healthy hair.",
   },
 ];
@@ -27,7 +33,7 @@ const highlights = [
   <div class="grid lg:grid-cols-[0.9fr_0.9fr_1.55fr]">
     <div class="relative min-h-72 overflow-hidden lg:min-h-[20rem]">
       <img
-        src="/images/salon.png"
+        src={salonImage.src}
         alt="Rokk Lab salon interior"
         class="absolute inset-0 h-full w-full object-cover grayscale"
       />
@@ -68,7 +74,7 @@ const highlights = [
               style={`--icon-delay: ${index * 0.18}s`}
             >
               <img
-                src={item.image}
+                src={item.image.src}
                 alt=""
                 class="service-icon mb-5 h-16 w-16 object-contain"
               />

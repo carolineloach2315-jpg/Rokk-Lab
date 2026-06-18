@@ -2,12 +2,16 @@
 import "../../styles/global.css";
 import Header from "../../components/landing/header.astro";
 import Footer from "../../components/footer.astro";
+import servicesColourIcon from "../../assets/icons/services-page-colour.png";
+import servicesCutIcon from "../../assets/icons/services-page-cut.png";
+import servicesStyleIcon from "../../assets/icons/services-page-style.png";
+import servicesTreatmentsIcon from "../../assets/icons/services-page-treatments.png";
 
 const categories = [
   {
     label: "Colour",
     key: "colour",
-    image: "/images/services-page-colour.png",
+    image: servicesColourIcon,
     services: [
       { name: "Root Retouch", price: "$105-$115" },
       { name: "Full Colour", price: "$125-$165" },
@@ -23,7 +27,7 @@ const categories = [
   {
     label: "Cuts",
     key: "cuts",
-    image: "/images/services-page-cut.png",
+    image: servicesCutIcon,
     services: [
       { name: "First Visit Curly Cut and Style", price: "$175" },
       { name: "First Visit Cut and Blow Dry", price: "$160" },
@@ -36,7 +40,7 @@ const categories = [
   {
     label: "Styling",
     key: "styling",
-    image: "/images/services-page-style.png",
+    image: servicesStyleIcon,
     services: [
       { name: "Blow dry long hair", price: "$85" },
       { name: "Blow dry Medium Hair", price: "$65" },
@@ -51,7 +55,7 @@ const categories = [
   {
     label: "Treatments & Add-Ons",
     key: "treatments",
-    image: "/images/services-page-treatments.png",
+    image: servicesTreatmentsIcon,
     services: [
       { name: "Nanoplasty Long Hair", price: "$550" },
       { name: "Nanoplasty Medium Hair", price: "$450" },
@@ -66,7 +70,7 @@ const categories = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Services | Rokk Lab</title>
   </head>
 

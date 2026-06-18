@@ -3,13 +3,14 @@ import "../styles/global.css";
 import Header from "../components/landing/header.astro";
 import Footer from "../components/footer.astro";
 import Button from "../components/landing/button.astro";
+import heroCopperHair from "../assets/home/hero-copper-hair.png";
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Page Not Found | Rokk Lab</title>
   </head>
 
@@ -40,7 +41,7 @@ import Button from "../components/landing/button.astro";
 
           <div class="relative hidden min-h-[28rem] overflow-hidden lg:block">
             <img
-              src="/images/hero-copper-hair.png"
+              src={heroCopperHair.src}
               alt="Copper salon hair"
               class="absolute inset-0 h-full w-full object-cover object-center"
               style="-webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%, black 82%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 35%, black 82%, transparent 100%);"

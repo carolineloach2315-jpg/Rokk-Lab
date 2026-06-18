@@ -1,24 +1,29 @@
 ---
+import colourIcon from "../../assets/icons/colour.png";
+import cutIcon from "../../assets/icons/cut.png";
+import styleIcon from "../../assets/icons/style.png";
+import treatmentIcon from "../../assets/icons/treatment.png";
+
 const services = [
   {
     title: "Cut",
     description: "Precision cuts tailored to your style.",
-    image: "/images/cut.png",
+    image: cutIcon,
   },
   {
     title: "Color",
     description: "Modern color techniques that enhance you.",
-    image: "/images/colour.png",
+    image: colourIcon,
   },
   {
     title: "Styling",
     description: "Blowouts, waves, and finishing touches.",
-    image: "/images/style.png",
+    image: styleIcon,
   },
   {
     title: "Treatments",
     description: "Nourishing treatments for healthy hair.",
-    image: "/images/treatment.png",
+    image: treatmentIcon,
   },
 ];
 ---
@@ -38,7 +43,7 @@ const services = [
             }`}
           >
             <img
-              src={service.image}
+              src={service.image.src}
               alt=""
               class="mb-7 h-16 w-16 object-contain brightness-0 invert"
             />
