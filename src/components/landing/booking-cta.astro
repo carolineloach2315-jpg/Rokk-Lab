@@ -1,5 +1,5 @@
 ---
-import Button from "./button.astro";
+import Button from "../../components/landing/button.astro";
 import bottomImage from "../../assets/home/bottom.png";
 ---
 
@@ -11,26 +11,43 @@ import bottomImage from "../../assets/home/bottom.png";
       class="h-full w-full object-cover object-center grayscale"
       style="-webkit-mask-image: linear-gradient(to right, transparent 0%, black 32%, black 82%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 32%, black 82%, transparent 100%);"
     />
-    <div class="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-neutral-100 to-transparent"></div>
-    <div class="absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-neutral-100/30 to-transparent"></div>
+    <div
+      class="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-neutral-100 to-transparent"
+    >
+    </div>
+    <div
+      class="absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-neutral-100/30 to-transparent"
+    >
+    </div>
   </div>
 
-  <div class="relative z-10 mx-auto flex max-w-7xl px-6 py-12 md:px-16 md:py-14">
+  <div
+    class="relative z-10 mx-auto flex max-w-7xl px-6 py-12 md:px-16 md:py-14"
+  >
     <div>
-      <p class="mb-4 text-xs font-bold uppercase tracking-[0.35em] text-orange-600">
+      <p
+        class="mb-4 text-xs font-bold uppercase tracking-[0.35em] text-orange-600"
+      >
         Ready for a new look?
       </p>
 
-      <h2 class="text-2xl font-black uppercase leading-tight text-black sm:text-3xl md:text-4xl">
+      <h2
+        class="text-2xl font-black uppercase leading-tight text-black sm:text-3xl md:text-4xl"
+      >
         Book your appointment
       </h2>
 
-      <div class="mt-4 flex flex-col gap-6 md:flex-row md:items-center md:gap-14">
+      <div
+        class="mt-4 flex flex-col gap-6 md:flex-row md:items-center md:gap-14"
+      >
         <p class="text-base font-semibold text-neutral-600">
           We can't wait to welcome you.
         </p>
 
-        <Button href="https://booking.clientdiary.com/?bookingsUrl=RokkLab&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn9FErYtiyf2PHYkbbmUEiDdfX4kKj7467IwK1oOtJ28Sg-mF-_6AGlJuuR6c_aem_wew15SLhLb1jQXxDGi8fpg" variant="outline">Book Now</Button>
+        <Button
+          href="https://booking.clientdiary.com/?bookingsUrl=RokkLab&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn9FErYtiyf2PHYkbbmUEiDdfX4kKj7467IwK1oOtJ28Sg-mF-_6AGlJuuR6c_aem_wew15SLhLb1jQXxDGi8fpg"
+          variant="outline">Book Now</Button
+        >
       </div>
     </div>
   </div>

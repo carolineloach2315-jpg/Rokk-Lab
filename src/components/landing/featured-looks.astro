@@ -1,5 +1,5 @@
 ---
-import Button from "./button.astro";
+import Button from "../../components/landing/button.astro";
 import redBob from "../../assets/home/featured-looks/red-bob.jpg";
 import brondeWaves from "../../assets/home/featured-looks/bronde.png";
 import blondeWaves from "../../assets/home/featured-looks/blonde-waves.jpg";
@@ -28,18 +28,30 @@ const looks = [
 ];
 ---
 
-<section id="featured-looks" class="featured-looks bg-white" data-featured-looks>
-  <div class="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:px-16 lg:grid-cols-[0.9fr_2.15fr] lg:items-center lg:gap-12 lg:py-20">
+<section
+  id="featured-looks"
+  class="featured-looks bg-white"
+  data-featured-looks
+>
+  <div
+    class="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:px-16 lg:grid-cols-[0.9fr_2.15fr] lg:items-center lg:gap-12 lg:py-20"
+  >
     <div class="max-w-md">
-      <p class="mb-6 text-xs font-bold uppercase tracking-[0.35em] text-orange-600">
+      <p
+        class="mb-6 text-xs font-bold uppercase tracking-[0.35em] text-orange-600"
+      >
         Featured looks
       </p>
 
-      <h2 class="text-4xl font-black uppercase leading-tight text-black sm:text-5xl lg:text-[3.35rem]">
+      <h2
+        class="text-4xl font-black uppercase leading-tight text-black sm:text-5xl lg:text-[3.35rem]"
+      >
         Beautiful hair. Expertly crafted.
       </h2>
 
-      <p class="mt-6 max-w-sm text-base font-semibold leading-7 text-neutral-600">
+      <p
+        class="mt-6 max-w-sm text-base font-semibold leading-7 text-neutral-600"
+      >
         A collection of real transformations and signature looks by our team.
       </p>
 
@@ -69,8 +81,12 @@ const looks = [
 </section>
 
 <script>
-  const featuredLooksSections = document.querySelectorAll<HTMLElement>("[data-featured-looks]");
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const featuredLooksSections = document.querySelectorAll<HTMLElement>(
+    "[data-featured-looks]",
+  );
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
   const showFeaturedLooks = (section: HTMLElement) => {
     section.classList.add("is-visible");
@@ -88,10 +104,12 @@ const looks = [
           }
         });
       },
-      { threshold: 0.36 }
+      { threshold: 0.36 },
     );
 
-    featuredLooksSections.forEach((section) => featuredLooksObserver.observe(section));
+    featuredLooksSections.forEach((section) =>
+      featuredLooksObserver.observe(section),
+    );
   }
 </script>
 
