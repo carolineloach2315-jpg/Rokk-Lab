@@ -1,4 +1,6 @@
 ---
+import rokkLabLogo from "../../assets/logos/rokk-lab-logo.png";
+
 const tradingHours = [
   "Sunday - Monday: Closed",
   "Tuesday: 9am-8pm",
@@ -7,73 +9,40 @@ const tradingHours = [
   "Friday: 10am-5pm",
   "Saturday: 8am-5pm",
 ];
+
+const address = "908 Canning Hwy Applecross WA 6153";
+const directionsUrl =
+  "https://www.google.com/maps/dir/?api=1&destination=908%20Canning%20Hwy%20Applecross%20WA%206153";
 ---
 
-<footer class="bg-black px-6 py-16 text-white md:px-16 md:py-20">
-  <div class="mx-auto grid max-w-7xl gap-12 md:grid-cols-2 md:gap-16">
-    <section>
-      <h2 class="mb-7 text-xl font-semibold uppercase tracking-wide">
-        Trading Hours
-      </h2>
+<footer class="bg-black px-6 py-10 text-white md:px-16 md:py-12">
+  <div
+    class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1fr_1.05fr_1.1fr] lg:gap-0"
+  >
+    <section class="lg:pr-12">
+      <a href="/" aria-label="Rokk Lab home" class="inline-flex">
+        <img
+          src={rokkLabLogo.src}
+          alt="Rokk Lab"
+          class="h-16 w-auto invert md:h-20"
+        />
+      </a>
 
-      <ul class="space-y-4 text-sm font-normal leading-6 text-neutral-300 md:space-y-5 md:text-base md:leading-tight">
-        {tradingHours.map((item) => <li>{item}</li>)}
-      </ul>
-    </section>
+      <p class="mt-7 max-w-56 text-sm font-semibold leading-5 text-neutral-300">
+        Where style meets science. Precision. Confidence. You.
+      </p>
 
-    <section>
-      <h2 class="mb-7 text-xl font-semibold uppercase tracking-wide">
-        Contact
-      </h2>
-
-      <div class="space-y-4 text-sm font-normal leading-6 text-neutral-300 md:space-y-5 md:text-base md:leading-tight">
-        <p>Rokk Lab</p>
-        <p>908 Canning Hwy Applecross 6153</p>
-        <p>
-          <a href="tel:+61861135847" class="transition hover:text-orange-500">
-            (08) 611 358 47
-          </a>
-        </p>
-        <p>
-          <a
-            href="mailto:hello@rokklab.com.au"
-            class="transition hover:text-orange-500"
-          >
-            hello@rokklab.com.au
-          </a>
-        </p>
-      </div>
-
-      <div class="mt-12 flex gap-4">
-        <a
-          href="https://www.facebook.com/rokklab/"
-          aria-label="Rokk Lab on Facebook"
-          class="flex h-14 w-14 items-center justify-center rounded bg-orange-500 text-white transition hover:bg-white hover:text-black"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            aria-hidden="true"
-            class="h-7 w-7"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path
-              d="M14.2 8.1V6.7c0-.7.5-.9 1-.9h1.8V2.7L14.5 2.6c-2.8 0-4.3 1.7-4.3 4.7v.8H7.4v3.5h2.8V21h3.6v-9.4h2.8l.5-3.5h-3Z"
-            ></path>
-          </svg>
-        </a>
-
+      <div class="mt-6 flex items-center gap-5">
         <a
           href="https://www.instagram.com/rokk_lab/"
           aria-label="Rokk Lab on Instagram"
-          class="flex h-14 w-14 items-center justify-center rounded bg-orange-500 text-white transition hover:bg-white hover:text-black"
+          class="text-white transition hover:text-orange-500"
           target="_blank"
           rel="noopener noreferrer"
         >
           <svg
             aria-hidden="true"
-            class="h-7 w-7"
+            class="h-6 w-6"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -87,14 +56,162 @@ const tradingHours = [
             ></circle>
           </svg>
         </a>
+
+        <a
+          href="https://www.facebook.com/rokklab/"
+          aria-label="Rokk Lab on Facebook"
+          class="text-white transition hover:text-orange-500"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            aria-hidden="true"
+            class="h-6 w-6"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M14.2 8.1V6.7c0-.7.5-.9 1-.9h1.8V2.7L14.5 2.6c-2.8 0-4.3 1.7-4.3 4.7v.8H7.4v3.5h2.8V21h3.6v-9.4h2.8l.5-3.5h-3Z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="lg:border-l lg:border-white/15 lg:px-12">
+      <h2
+        class="mb-4 text-sm font-black uppercase tracking-[0.18em] text-orange-600"
+      >
+        Trading Hours
+      </h2>
+
+      <ul class="space-y-2 text-sm font-semibold leading-6 text-neutral-300">
+        {tradingHours.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <section class="lg:border-l lg:border-white/15 lg:px-12">
+      <h2
+        class="mb-4 text-sm font-black uppercase tracking-[0.18em] text-orange-600"
+      >
+        Contact
+      </h2>
+
+      <div class="space-y-4 text-sm font-semibold leading-5 text-neutral-300">
+        <p class="text-white">Rokk Lab</p>
+
+        <p class="flex gap-4">
+          <svg
+            aria-hidden="true"
+            class="mt-0.5 h-5 w-5 shrink-0 text-white"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M12 2.5a7 7 0 0 0-7 7c0 5.1 7 12 7 12s7-6.9 7-12a7 7 0 0 0-7-7Zm0 9.7a2.8 2.8 0 1 1 0-5.6 2.8 2.8 0 0 1 0 5.6Z"
+            ></path>
+          </svg>
+          <span>{address}</span>
+        </p>
+
+        <p class="flex gap-4">
+          <svg
+            aria-hidden="true"
+            class="mt-0.5 h-5 w-5 shrink-0 text-white"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M19.2 15.7c-1.3 0-2.5-.2-3.6-.6a1.6 1.6 0 0 0-1.6.3l-1.6 1.2a14.9 14.9 0 0 1-5-5L8.6 10a1.6 1.6 0 0 0 .3-1.6 12 12 0 0 1-.6-3.6A1.8 1.8 0 0 0 6.5 3H4.2A1.8 1.8 0 0 0 2.5 4.8 16.8 16.8 0 0 0 19.2 21a1.8 1.8 0 0 0 1.8-1.7v-2.1a1.8 1.8 0 0 0-1.8-1.5Z"
+            ></path>
+          </svg>
+          <a href="tel:+61861135847" class="transition hover:text-orange-500">
+            (08) 611 358 47
+          </a>
+        </p>
+
+        <p class="flex gap-4">
+          <svg
+            aria-hidden="true"
+            class="mt-0.5 h-5 w-5 shrink-0 text-white"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="m4 7 8 6 8-6"></path>
+          </svg>
+          <a
+            href="mailto:hello@rokklab.com.au"
+            class="transition hover:text-orange-500"
+          >
+            hello@rokklab.com.au
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <section class="lg:border-l lg:border-white/15 lg:pl-12">
+      <h2
+        class="mb-4 text-sm font-black uppercase tracking-[0.18em] text-orange-600"
+      >
+        Find Us
+      </h2>
+
+      <div class="overflow-hidden border border-white/25">
+        <a
+          href={directionsUrl}
+          aria-label="Open directions to Rokk Lab"
+          class="relative block h-28 overflow-hidden bg-neutral-200"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span
+            class="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.08)_1px,transparent_1px),linear-gradient(0deg,rgba(0,0,0,0.08)_1px,transparent_1px)] bg-[length:42px_34px]"
+          ></span>
+          <span
+            class="absolute left-[-12%] top-7 h-5 w-[125%] -rotate-[12deg] bg-white/90 shadow-sm"
+          ></span>
+          <span
+            class="absolute left-[-8%] top-16 h-4 w-[118%] rotate-[18deg] bg-white/80 shadow-sm"
+          ></span>
+          <span
+            class="absolute left-1/3 top-[-18%] h-[145%] w-4 rotate-[32deg] bg-white/70 shadow-sm"
+          ></span>
+          <svg
+            aria-hidden="true"
+            class="absolute left-1/2 top-1/2 h-9 w-9 -translate-x-1/2 -translate-y-1/2 text-black drop-shadow"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M12 2.5a7 7 0 0 0-7 7c0 5.1 7 12 7 12s7-6.9 7-12a7 7 0 0 0-7-7Zm0 9.7a2.8 2.8 0 1 1 0-5.6 2.8 2.8 0 0 1 0 5.6Z"
+            ></path>
+          </svg>
+        </a>
+        <a
+          href={directionsUrl}
+          class="flex h-11 items-center justify-center border-t border-white/25 text-xs font-black uppercase tracking-[0.16em] text-white transition hover:bg-white hover:text-black"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Get Directions
+        </a>
       </div>
     </section>
   </div>
 
-  <div class="mx-auto mt-12 flex max-w-7xl border-t border-white/10 pt-8 md:mt-16">
+  <div
+    class="mx-auto mt-8 flex max-w-7xl flex-wrap items-center justify-center gap-x-2 gap-y-2 border-t border-white/10 pt-5 text-center text-xs font-semibold text-neutral-400"
+  >
+    <span>&copy; 2026 Rokk Lab. All rights reserved.</span>
+    <span aria-hidden="true">|</span>
     <a
-      href="/Privacy%20policy/"
-      class="text-xs font-normal uppercase tracking-wide text-neutral-400 transition hover:text-orange-500"
+      href="/privacy-policy/"
+      class="uppercase tracking-wide transition hover:text-orange-500"
     >
       Privacy Policy
     </a>
