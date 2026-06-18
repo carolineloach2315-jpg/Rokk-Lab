@@ -1,0 +1,184 @@
+---
+import "../../styles/global.css";
+import Header from "../../components/landing/header.astro";
+import Footer from "../../components/footer.astro";
+
+const categories = [
+  {
+    label: "Colour",
+    key: "colour",
+    image: "/images/services-page-colour.png",
+    services: [
+      { name: "Root Retouch", price: "$105-$115" },
+      { name: "Full Colour", price: "$125-$165" },
+      { name: "Scalp Lightener", price: "$135" },
+      { name: "Toner", price: "$65-$105" },
+      { name: "Crown and Part Foils", price: "$125" },
+      { name: "1/2 Head Foils", price: "$170" },
+      { name: "Full Head Foils", price: "$240" },
+      { name: "Feature Foils with Colour", price: "$65" },
+      { name: "Free Hand Balayage", price: "$230" },
+    ],
+  },
+  {
+    label: "Cuts",
+    key: "cuts",
+    image: "/images/services-page-cut.png",
+    services: [
+      { name: "First Visit Curly Cut and Style", price: "$175" },
+      { name: "First Visit Cut and Blow Dry", price: "$160" },
+      { name: "Men's Cut & Style", price: "$79" },
+      { name: "Restyle and Blow-Dry", price: "$170" },
+      { name: "Returning Curly Cut & Style", price: "$155" },
+      { name: "Returning Client Cut & Blow-Dry", price: "$125" },
+    ],
+  },
+  {
+    label: "Styling",
+    key: "styling",
+    image: "/images/services-page-style.png",
+    services: [
+      { name: "Blow dry long hair", price: "$85" },
+      { name: "Blow dry Medium Hair", price: "$65" },
+      { name: "Blow dry extra-long/thick", price: "$90" },
+      { name: "Blow dry short hair", price: "$55" },
+      { name: "Blow dry with extensions", price: "$90" },
+      { name: "Curls only", price: "$75" },
+      { name: "Diffused Blow dry", price: "$65" },
+      { name: "Up style", price: "$120" },
+    ],
+  },
+  {
+    label: "Treatments & Add-Ons",
+    key: "treatments",
+    image: "/images/services-page-treatments.png",
+    services: [
+      { name: "Nanoplasty Long Hair", price: "$550" },
+      { name: "Nanoplasty Medium Hair", price: "$450" },
+      { name: "Chrionologiste Caviar", price: "$80" },
+      { name: "Kerastase Fusio Dose", price: "$50" },
+    ],
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <title>Services | Rokk Lab</title>
+  </head>
+
+  <body class="bg-neutral-200 font-sans text-black">
+    <main>
+      <section
+        class="relative bg-neutral-200 px-6 pb-16 pt-44 text-black md:px-16 lg:pb-20 lg:pt-44"
+      >
+        <Header />
+
+        <div class="mx-auto max-w-5xl">
+          <div class="mx-auto mb-10 max-w-4xl text-center md:mb-12">
+            <p class="text-xs font-black uppercase tracking-[0.35em] text-orange-600">
+              Our Price Guide
+            </p>
+            <div class="mx-auto mt-4 h-px w-28 bg-orange-600"></div>
+
+            <h1 class="mt-7 text-1xl font-black uppercase leading-none text-black md:text-4xl">
+              Menu
+            </h1>
+
+            <div class="mx-auto mt-7 max-w-3xl space-y-4 text-sm font-semibold leading-7 text-neutral-600">
+              <p>
+                Final cost will vary depending on the services performed,
+                experience level of stylist and product used.
+              </p>
+
+              <div class="flex items-center justify-center gap-6">
+                <span class="hidden h-px w-12 bg-orange-600 md:block"></span>
+                <p>A free consultation and quote prior is recommended.</p>
+                <span class="hidden h-px w-12 bg-orange-600 md:block"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="overflow-hidden rounded-md border border-neutral-300/80 bg-white shadow-[0_20px_55px_rgba(0,0,0,0.08)]">
+            <div class="grid grid-cols-2 border-b border-neutral-300/80 md:grid-cols-4">
+              {
+                categories.map((category, index) => (
+                  <button
+                    type="button"
+                    data-tab-button={category.key}
+                    class={`group flex items-center justify-center border-neutral-300/80 px-5 py-4 text-[11px] font-semibold uppercase tracking-[0.18em] transition even:border-l border-neutral-300/80 md:border-l ${
+                      index === 0
+                        ? "bg-orange-600 text-white md:border-l-0"
+                        : "bg-white text-black hover:bg-neutral-100"
+                    }`}
+                  >
+                    <span>{category.label}</span>
+                  </button>
+                ))
+              }
+            </div>
+
+            <div class="px-5 py-5 md:px-8 md:py-6">
+              {
+                categories.map((category, index) => (
+                  <div
+                    data-tab-panel={category.key}
+                    class={index === 0 ? "block" : "hidden"}
+                  >
+                    {category.services.map((service) => (
+                      <div class="grid items-center border-b border-neutral-200 py-3 last:border-b-0 md:grid-cols-[1.1fr_0.75fr] md:gap-8">
+                        <p class="break-words text-xs font-medium uppercase tracking-[0.12em] text-neutral-700 md:tracking-[0.18em]">
+                          {service.name}
+                        </p>
+
+                        <p class="mt-2 text-xs font-normal tracking-[0.12em] text-neutral-600 md:mt-0 md:border-l md:border-neutral-200 md:pl-8">
+                          {service.price}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+          <p class="mt-8 text-center text-xs font-semibold leading-6 text-neutral-600">
+            Prices are a guide only and may vary. Ask our team for a personalised quote.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+
+    <script>
+      const buttons = document.querySelectorAll("[data-tab-button]");
+      const panels = document.querySelectorAll("[data-tab-panel]");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const selectedTab = button.getAttribute("data-tab-button");
+
+          buttons.forEach((item) => {
+            item.classList.remove("bg-orange-600", "text-white");
+            item.classList.add("bg-white", "text-black", "hover:bg-neutral-100");
+          });
+
+          button.classList.add("bg-orange-600", "text-white");
+          button.classList.remove("bg-white", "text-black", "hover:bg-neutral-100");
+
+          panels.forEach((panel) => {
+            const isSelected =
+              panel.getAttribute("data-tab-panel") === selectedTab;
+
+            panel.classList.toggle("hidden", !isSelected);
+            panel.classList.toggle("block", isSelected);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

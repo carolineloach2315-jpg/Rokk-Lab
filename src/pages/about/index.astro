@@ -1,0 +1,78 @@
+---
+import "../../styles/global.css";
+import Header from "../../components/landing/header.astro";
+import Footer from "../../components/footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <title>About | Rokk Lab</title>
+  </head>
+
+  <body class="bg-[#191919] font-sans text-white">
+    <main>
+      <section class="relative overflow-hidden bg-neutral-200 text-black">
+        <Header />
+
+        <div class="mx-auto grid min-h-[70vh] max-w-7xl items-center gap-10 px-6 pb-16 pt-44 md:grid-cols-2 md:px-16 md:pb-20 md:pt-36">
+          <div>
+            <p class="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-orange-600">
+              About Rokk Lab
+            </p>
+
+            <h1 class="mb-7 text-4xl font-black uppercase leading-none sm:text-5xl md:text-7xl">
+              Beauty with precision.
+            </h1>
+
+            <p class="max-w-xl text-base font-semibold leading-7 text-neutral-700">
+              Rokk Lab is a modern hair salon built around thoughtful
+              consultation, technical colour work, precision cutting, and
+              effortless styling.
+            </p>
+          </div>
+
+          <div class="relative h-80 overflow-hidden md:h-[30rem]">
+            <img
+              src="/images/salon.png"
+              alt="Rokk Lab salon interior"
+              class="h-full w-full object-cover grayscale"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="px-6 py-16 md:px-16 md:py-24">
+        <div class="mx-auto grid max-w-7xl gap-14 md:grid-cols-[0.8fr_1.2fr]">
+                    <div>
+            <p class="mb-4 text-xs font-bold uppercase tracking-[0.35em] text-orange-600">
+              Our approach
+            </p>
+
+            <h2 class="text-3xl font-black uppercase leading-tight md:text-5xl">
+              Personalised hair and beauty.
+            </h2>
+          </div>
+
+                    <div class="space-y-6 text-base font-medium leading-8 text-neutral-300">
+            <p>
+              Rokk Lab is a Hair and Beauty salon located in Applecross, WA.
+            </p>
+
+            <p>
+              We cater to all hair types and textures, with a diverse range of
+              hairdressing services on offer, including colour, foils,
+              haircutting and styling. Book today and experience our
+              down-to-earth salon environment and personalised service for
+              yourself.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>
