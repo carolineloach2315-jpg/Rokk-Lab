@@ -1,7 +1,7 @@
 ---
 import "../../styles/global.css";
-import Header from "../../components/landing/header.astro";
-import Footer from "../../components/footer.astro";
+import Header from "../../components/global/header.astro";
+import Footer from "../../components/global/footer.astro";
 import servicesColourIcon from "../../assets/icons/services-page-colour.png";
 import servicesCutIcon from "../../assets/icons/services-page-cut.png";
 import servicesStyleIcon from "../../assets/icons/services-page-style.png";
@@ -83,16 +83,22 @@ const categories = [
 
         <div class="mx-auto max-w-5xl">
           <div class="mx-auto mb-10 max-w-4xl text-center md:mb-12">
-            <p class="text-xs font-black uppercase tracking-[0.35em] text-orange-600">
+            <p
+              class="text-xs font-black uppercase tracking-[0.35em] text-orange-600"
+            >
               Our Price Guide
             </p>
             <div class="mx-auto mt-4 h-px w-28 bg-orange-600"></div>
 
-            <h1 class="mt-7 text-1xl font-black uppercase leading-none text-black md:text-4xl">
+            <h1
+              class="mt-7 text-1xl font-black uppercase leading-none text-black md:text-4xl"
+            >
               Menu
             </h1>
 
-            <div class="mx-auto mt-7 max-w-3xl space-y-4 text-sm font-semibold leading-7 text-neutral-600">
+            <div
+              class="mx-auto mt-7 max-w-3xl space-y-4 text-sm font-semibold leading-7 text-neutral-600"
+            >
               <p>
                 Final cost will vary depending on the services performed,
                 experience level of stylist and product used.
@@ -106,8 +112,12 @@ const categories = [
             </div>
           </div>
 
-          <div class="overflow-hidden rounded-md border border-neutral-300/80 bg-white shadow-[0_20px_55px_rgba(0,0,0,0.08)]">
-            <div class="grid grid-cols-2 border-b border-neutral-300/80 md:grid-cols-4">
+          <div
+            class="overflow-hidden rounded-md border border-neutral-300/80 bg-white shadow-[0_20px_55px_rgba(0,0,0,0.08)]"
+          >
+            <div
+              class="grid grid-cols-2 border-b border-neutral-300/80 md:grid-cols-4"
+            >
               {
                 categories.map((category, index) => (
                   <button
@@ -149,8 +159,11 @@ const categories = [
             </div>
           </div>
 
-          <p class="mt-8 text-center text-xs font-semibold leading-6 text-neutral-600">
-            Prices are a guide only and may vary. Ask our team for a personalised quote.
+          <p
+            class="mt-8 text-center text-xs font-semibold leading-6 text-neutral-600"
+          >
+            Prices are a guide only and may vary. Ask our team for a
+            personalised quote.
           </p>
         </div>
       </section>
@@ -168,11 +181,19 @@ const categories = [
 
           buttons.forEach((item) => {
             item.classList.remove("bg-orange-600", "text-white");
-            item.classList.add("bg-white", "text-black", "hover:bg-neutral-100");
+            item.classList.add(
+              "bg-white",
+              "text-black",
+              "hover:bg-neutral-100",
+            );
           });
 
           button.classList.add("bg-orange-600", "text-white");
-          button.classList.remove("bg-white", "text-black", "hover:bg-neutral-100");
+          button.classList.remove(
+            "bg-white",
+            "text-black",
+            "hover:bg-neutral-100",
+          );
 
           panels.forEach((panel) => {
             const isSelected =
