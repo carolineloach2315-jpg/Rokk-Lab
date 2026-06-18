@@ -3,7 +3,7 @@ import "../../styles/global.css";
 import Header from "../../components/global/header.astro";
 import Footer from "../../components/global/footer.astro";
 import Button from "../../components/landing/button.astro";
-import heroCopperHair from "../../assets/home/hero-copper-hair.png";
+import servicesHero from "../../assets/services/services-hero.png";
 import servicesColourIcon from "../../assets/icons/services-page-colour.png";
 import servicesCutIcon from "../../assets/icons/services-page-cut.png";
 import servicesStyleIcon from "../../assets/icons/services-page-style.png";
@@ -89,9 +89,9 @@ const categories = [
         >
           <div class="relative h-[calc(100%+3rem)] w-full -translate-y-12">
             <img
-              src={heroCopperHair.src}
-              alt="Copper salon waves from behind"
-              class="h-full w-full object-cover object-center"
+              src={servicesHero.src}
+              alt="Blonde salon upstyle in the Rokk Lab reception"
+              class="h-full w-full origin-top-left scale-110 object-cover object-[66%_top]"
               style="-webkit-mask-image: linear-gradient(to right, transparent 0%, black 46%, black 84%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 46%, black 84%, transparent 100%); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"
             />
             <div
@@ -136,9 +136,9 @@ const categories = [
             class="pointer-events-none relative mt-12 h-[22rem] overflow-hidden md:hidden"
           >
             <img
-              src={heroCopperHair.src}
+              src={servicesHero.src}
               alt=""
-              class="h-full w-full object-cover object-[62%_center]"
+              class="h-full w-full origin-top-left scale-110 object-cover object-[66%_top]"
             />
             <div
               class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-neutral-200 to-transparent"
