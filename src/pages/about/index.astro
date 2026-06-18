@@ -2,7 +2,34 @@
 import "../../styles/global.css";
 import Header from "../../components/global/header.astro";
 import Footer from "../../components/global/footer.astro";
+import Button from "../../components/landing/button.astro";
 import salonImage from "../../assets/home/salon.png";
+import salonColourImage from "../../assets/about/images/salon-colour.png";
+import bottomImage from "../../assets/home/bottom.png";
+
+const bookingUrl =
+  "https://booking.clientdiary.com/?bookingsUrl=RokkLab&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn9FErYtiyf2PHYkbbmUEiDdfX4kKj7467IwK1oOtJ28Sg-mF-_6AGlJuuR6c_aem_wew15SLhLb1jQXxDGi8fpg";
+
+const craftSteps = [
+  {
+    label: "01",
+    title: "Consult",
+    description:
+      "We start with your hair history, routine, goals, texture, and the finish you want to live with after you leave.",
+  },
+  {
+    label: "02",
+    title: "Create",
+    description:
+      "Cutting, colour, foils, styling, and treatments are planned around balance, movement, condition, and longevity.",
+  },
+  {
+    label: "03",
+    title: "Refine",
+    description:
+      "Every appointment finishes with considered detailing, styling guidance, and a look that feels like you.",
+  },
+] as const;
 ---
 
 <html lang="en">
@@ -10,65 +37,84 @@ import salonImage from "../../assets/home/salon.png";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>About | Rokk Lab</title>
+    <title>About Rokk Lab | Rokk Lab</title>
   </head>
 
   <body class="bg-[#191919] font-sans text-white">
     <main>
-      <section class="relative overflow-hidden bg-neutral-200 text-black">
+      <section
+        class="relative min-h-screen overflow-hidden bg-neutral-200 text-black"
+        data-hero-scroll-section
+      >
         <Header />
 
+        <div class="pointer-events-none absolute inset-0">
+          <img
+            src={salonColourImage.src}
+            alt="Rokk Lab salon interior with styling chairs and product shelves"
+            class="h-full w-full object-cover object-center"
+            data-hero-scroll-image
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-neutral-100 via-neutral-100/95 via-[52%] to-neutral-100/70 md:via-neutral-100/88 md:via-[37%] md:to-transparent"
+          >
+          </div>
+          <div
+            class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-neutral-100/95 via-neutral-100/35 to-transparent"
+          >
+          </div>
+        </div>
+
         <div
-          class="mx-auto grid min-h-[70vh] max-w-7xl items-center gap-10 px-6 pb-16 pt-44 md:grid-cols-2 md:px-16 md:pb-20 md:pt-36"
+          class="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 pb-16 pt-44 md:px-16 md:pb-20 md:pt-36"
         >
-          <div>
+          <div class="max-w-[42rem]">
             <p
-              class="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-orange-600"
+              class="mb-6 text-xs font-bold uppercase tracking-[0.35em] text-orange-600"
             >
-              About Rokk Lab
+              About Us
             </p>
 
             <h1
-              class="mb-7 text-4xl font-black uppercase leading-none sm:text-5xl md:text-7xl"
+              class="max-w-3xl text-5xl font-black uppercase leading-[0.95] tracking-normal text-black sm:text-6xl md:text-7xl lg:text-[5.6rem]"
             >
-              Beauty with precision.
+              Experts in beauty and precision.
             </h1>
 
             <p
-              class="max-w-xl text-base font-semibold leading-7 text-neutral-700"
+              class="mt-7 max-w-lg text-base font-semibold leading-8 text-neutral-700 md:text-lg md:leading-9"
             >
-              Rokk Lab is a modern hair salon built around thoughtful
-              consultation, technical colour work, precision cutting, and
-              effortless styling.
+              At Rokk Lab, we blend creativity with technique to create hair
+              that looks effortless, modern, and tailored to you.
             </p>
-          </div>
 
-          <div class="relative h-80 overflow-hidden md:h-[30rem]">
-            <img
-              src={salonImage.src}
-              alt="Rokk Lab salon interior"
-              class="h-full w-full object-cover grayscale"
-            />
+            <div class="mt-9 flex">
+              <Button href={bookingUrl}>Book Your Appointment</Button>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="px-6 py-16 md:px-16 md:py-24">
-        <div class="mx-auto grid max-w-7xl gap-14 md:grid-cols-[0.8fr_1.2fr]">
+      <section class="bg-[#191919] px-6 py-16 text-white md:px-16 md:py-24">
+        <div
+          class="mx-auto grid max-w-7xl gap-12 md:grid-cols-[0.82fr_1.18fr] md:gap-16"
+        >
           <div>
             <p
-              class="mb-4 text-xs font-bold uppercase tracking-[0.35em] text-orange-600"
+              class="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-orange-500"
             >
               Our approach
             </p>
 
-            <h2 class="text-3xl font-black uppercase leading-tight md:text-5xl">
+            <h2
+              class="max-w-xl text-4xl font-black uppercase leading-tight sm:text-5xl md:text-6xl"
+            >
               Personalised hair and beauty.
             </h2>
           </div>
 
           <div
-            class="space-y-6 text-base font-medium leading-8 text-neutral-300"
+            class="space-y-6 text-base font-medium leading-8 text-neutral-300 md:text-lg md:leading-9"
           >
             <p>
               Rokk Lab is a Hair and Beauty salon located in Applecross, WA.
@@ -77,15 +123,247 @@ import salonImage from "../../assets/home/salon.png";
             <p>
               We cater to all hair types and textures, with a diverse range of
               hairdressing services on offer, including colour, foils,
-              haircutting and styling. Book today and experience our
-              down-to-earth salon environment and personalised service for
-              yourself.
+              haircutting and styling.
             </p>
+
+            <p>
+              The salon experience is down-to-earth, considered, and built
+              around the person in the chair: clear advice, precise technique,
+              and hair that feels effortless beyond appointment day.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white px-6 py-16 text-black md:px-16 md:py-24">
+        <div class="mx-auto max-w-7xl">
+          <div
+            class="mb-12 grid gap-8 md:grid-cols-[0.85fr_1fr] md:items-end"
+          >
+            <div>
+              <p
+                class="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-orange-600"
+              >
+                What guides us
+              </p>
+
+              <h2
+                class="text-4xl font-black uppercase leading-tight sm:text-5xl md:text-6xl"
+              >
+                The details do the talking.
+              </h2>
+            </div>
+
+            <p class="max-w-xl text-base font-semibold leading-8 text-neutral-600">
+              Every appointment is shaped by technique, care, and a practical
+              understanding of how you wear your hair every day.
+            </p>
+          </div>
+
+          <div
+            class="grid border-y border-neutral-200 md:grid-cols-4"
+            data-stagger-parent
+          >
+            <article
+              class="border-b border-neutral-200 py-9 md:border-b-0 md:border-r md:px-7"
+              data-stagger-card
+            >
+              <div class="mb-7 flex h-14 w-14 items-center justify-center text-orange-600">
+                <svg data-draw-icon xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scissors-icon lucide-scissors h-12 w-12" aria-hidden="true"><circle cx="6" cy="6" r="3" /><path d="M8.12 8.12 12 12" /><path d="M20 4 8.12 15.88" /><circle cx="6" cy="18" r="3" /><path d="M14.8 14.8 20 20" /></svg>
+              </div>
+
+              <h3 class="text-lg font-black uppercase tracking-wide">
+                Precision
+              </h3>
+
+              <p class="mt-4 text-sm font-semibold leading-7 text-neutral-600">
+                Clean shapes, balanced movement, and cuts refined for your
+                natural texture.
+              </p>
+            </article>
+
+            <article
+              class="border-b border-neutral-200 py-9 md:border-b-0 md:border-r md:px-7"
+              data-stagger-card
+            >
+              <div class="mb-7 flex h-14 w-14 items-center justify-center text-orange-600">
+                <svg data-draw-icon xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-paintbrush-vertical-icon lucide-paintbrush-vertical h-12 w-12" aria-hidden="true"><path d="M10 2v2" /><path d="M14 2v4" /><path d="M17 2a1 1 0 0 1 1 1v9H6V3a1 1 0 0 1 1-1z" /><path d="M6 12a1 1 0 0 0-1 1v1a2 2 0 0 0 2 2h2a1 1 0 0 1 1 1v2.9a2 2 0 1 0 4 0V17a1 1 0 0 1 1-1h2a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1" /></svg>
+              </div>
+
+              <h3 class="text-lg font-black uppercase tracking-wide">
+                Expert colour
+              </h3>
+
+              <p class="mt-4 text-sm font-semibold leading-7 text-neutral-600">
+                Modern colour planning, foils, toning, and finishes made to
+                suit your style.
+              </p>
+            </article>
+
+            <article
+              class="border-b border-neutral-200 py-9 md:border-b-0 md:border-r md:px-7"
+              data-stagger-card
+            >
+              <div class="mb-7 flex h-14 w-14 items-center justify-center text-orange-600">
+                <svg data-draw-icon xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart h-12 w-12" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" /></svg>
+              </div>
+
+              <h3 class="text-lg font-black uppercase tracking-wide">
+                Quality care
+              </h3>
+
+              <p class="mt-4 text-sm font-semibold leading-7 text-neutral-600">
+                Condition-led recommendations that support healthy, wearable
+                hair.
+              </p>
+            </article>
+
+            <article class="py-9 md:px-7" data-stagger-card>
+              <div class="mb-7 flex h-14 w-14 items-center justify-center text-orange-600">
+                <svg data-draw-icon xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame-icon lucide-flame h-12 w-12" aria-hidden="true"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4" /></svg>
+              </div>
+
+              <h3 class="text-lg font-black uppercase tracking-wide">
+                Personalised
+              </h3>
+
+              <p class="mt-4 text-sm font-semibold leading-7 text-neutral-600">
+                A tailored salon experience that begins with how you want to
+                feel.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-neutral-100 px-6 py-16 text-black md:px-16 md:py-24">
+        <div
+          class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center"
+        >
+          <div class="relative aspect-[4/5] overflow-hidden bg-neutral-300">
+            <img
+              src={salonImage.src}
+              alt="Rokk Lab salon interior"
+              class="h-full w-full object-cover grayscale"
+              loading="lazy"
+            />
+          </div>
+
+          <div>
+            <p
+              class="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-orange-600"
+            >
+              Our craft
+            </p>
+
+            <h2
+              class="max-w-2xl text-4xl font-black uppercase leading-tight sm:text-5xl md:text-6xl"
+            >
+              Considered from consultation to finish.
+            </h2>
+
+            <div class="mt-10 divide-y divide-neutral-300 border-y border-neutral-300">
+              {
+                craftSteps.map((step) => (
+                  <article class="grid gap-5 py-7 sm:grid-cols-[5rem_1fr]">
+                    <p class="text-sm font-black uppercase tracking-[0.28em] text-orange-600">
+                      {step.label}
+                    </p>
+
+                    <div>
+                      <h3 class="text-xl font-black uppercase tracking-wide">
+                        {step.title}
+                      </h3>
+                      <p class="mt-3 text-sm font-semibold leading-7 text-neutral-600 md:text-base">
+                        {step.description}
+                      </p>
+                    </div>
+                  </article>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="overflow-hidden bg-[#191919] text-white">
+        <div
+          class="mx-auto grid max-w-7xl gap-0 px-6 py-16 md:px-16 md:py-24 lg:grid-cols-[0.78fr_1.22fr] lg:items-stretch"
+        >
+          <div
+            class="flex flex-col justify-between border-y border-white/15 py-10 lg:border-r lg:pr-12"
+          >
+            <div>
+              <p
+                class="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-orange-500"
+              >
+                The experience
+              </p>
+
+              <h2
+                class="text-4xl font-black uppercase leading-tight sm:text-5xl"
+              >
+                Relaxed energy. Precise results.
+              </h2>
+            </div>
+
+            <p class="mt-10 max-w-md text-base font-medium leading-8 text-neutral-300">
+              Book today and experience our down-to-earth salon environment and
+              personalised service for yourself.
+            </p>
+          </div>
+
+          <div class="relative min-h-[24rem] overflow-hidden bg-neutral-800 lg:min-h-[34rem]">
+            <img
+              src={bottomImage.src}
+              alt="Finished salon hair with polished movement"
+              class="h-full w-full object-cover object-center grayscale"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"
+            >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white px-6 py-14 text-black md:px-16 md:py-16">
+        <div
+          class="mx-auto flex max-w-7xl flex-col gap-8 border-t border-neutral-200 pt-10 md:flex-row md:items-center md:justify-between"
+        >
+          <div>
+            <p
+              class="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-orange-600 sm:tracking-[0.35em]"
+            >
+              Ready for your next appointment?
+            </p>
+
+            <h2
+              class="max-w-2xl text-3xl font-black uppercase leading-tight sm:text-4xl md:text-5xl"
+            >
+              Let's create hair that feels like you.
+            </h2>
+          </div>
+
+          <div class="flex shrink-0 flex-col gap-4 sm:flex-row">
+            <Button href={bookingUrl} variant="outline">Book Now</Button>
+            <a
+              href="/contact"
+              class="inline-flex items-center justify-center border border-black px-8 py-4 text-xs font-bold uppercase tracking-wide text-black transition hover:border-orange-600 hover:bg-orange-600 hover:text-white"
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       </section>
     </main>
 
     <Footer />
+
+    <script>
+      import { initAnimations } from "../../scripts/animations";
+
+      initAnimations();
+    </script>
   </body>
 </html>
