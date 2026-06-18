@@ -84,6 +84,26 @@ const categories = [
       <section class="relative min-h-screen overflow-hidden bg-neutral-200">
         <Header />
 
+        <div class="pointer-events-none absolute inset-0 md:hidden">
+          <img
+            src={servicesHero.src}
+            alt=""
+            class="h-full w-full origin-top-left scale-110 object-cover object-[66%_top]"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-neutral-100 via-neutral-100/95 via-[52%] to-neutral-100/70"
+          >
+          </div>
+          <div
+            class="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-neutral-100/95 via-neutral-100/35 to-transparent"
+          >
+          </div>
+          <div
+            class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-neutral-200/80 to-transparent"
+          >
+          </div>
+        </div>
+
         <div
           class="pointer-events-none absolute inset-y-0 right-0 hidden w-full items-start justify-end md:right-20 md:flex md:w-[74%]"
         >
@@ -130,24 +150,6 @@ const categories = [
             </p>
 
             <Button href={bookingUrl}>Book Your Appointment</Button>
-          </div>
-
-          <div
-            class="pointer-events-none relative mt-12 h-[22rem] overflow-hidden md:hidden"
-          >
-            <img
-              src={servicesHero.src}
-              alt=""
-              class="h-full w-full origin-top-left scale-110 object-cover object-[66%_top]"
-            />
-            <div
-              class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-neutral-200 to-transparent"
-            >
-            </div>
-            <div
-              class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-neutral-200 to-transparent"
-            >
-            </div>
           </div>
         </div>
       </section>
