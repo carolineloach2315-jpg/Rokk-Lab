@@ -1,0 +1,4 @@
+interface:
+  display_name: "Draw Icon Animation"
+  short_description: "Reusable GSAP SVG icon draw-in pattern"
+  default_prompt: "Use $draw-icon-animation to add the Emperor-style SVG icon draw-in animation."

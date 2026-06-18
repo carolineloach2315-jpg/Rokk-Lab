@@ -1,7 +1,7 @@
 ---
 import "../../styles/global.css";
-import Header from "../../components/landing/header.astro";
-import Footer from "../../components/footer.astro";
+import Header from "../../components/global/header.astro";
+import Footer from "../../components/global/footer.astro";
 
 const contactDetails = [
   {
@@ -31,7 +31,7 @@ const contactDetails = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Contact | Rokk Lab</title>
   </head>
 
@@ -43,29 +43,53 @@ const contactDetails = [
         <Header />
 
         <div class="mx-auto max-w-7xl">
-          <div class="mx-auto mb-10 max-w-3xl text-center md:mb-14">
-            <p class="text-xs font-black uppercase tracking-[0.35em] text-orange-600">
+          <div
+            class="mx-auto mb-10 max-w-3xl text-center md:mb-14"
+            data-micro-reveal-group
+          >
+            <p
+              class="text-xs font-black uppercase tracking-[0.35em] text-orange-600"
+              data-micro-reveal-item
+            >
               Contact Rokk Lab
             </p>
-            <div class="mx-auto mt-4 h-px w-28 bg-orange-600"></div>
+            <div
+              class="mx-auto mt-4 h-px w-28 bg-orange-600"
+              data-micro-line
+              data-micro-reveal-item
+            ></div>
 
-            <h1 class="mt-7 text-3xl font-black uppercase leading-none text-black md:text-4xl">
+            <h1
+              class="mt-7 text-3xl font-black uppercase leading-none text-black md:text-4xl"
+              data-micro-reveal-item
+            >
               Get in touch.
             </h1>
 
-            <p class="mx-auto mt-6 max-w-2xl text-sm font-semibold leading-7 text-neutral-600">
+            <p
+              class="mx-auto mt-6 max-w-2xl text-sm font-semibold leading-7 text-neutral-600"
+              data-micro-reveal-item
+            >
               Send us a message, call the salon, or visit us in Applecross.
             </p>
           </div>
 
-          <div class="grid overflow-hidden rounded-md border border-neutral-300/80 bg-white shadow-[0_20px_55px_rgba(0,0,0,0.08)] lg:grid-cols-[1.15fr_0.85fr]">
-            <form class="space-y-4 px-6 py-8 md:px-12 md:py-12">
-              <p class="mb-7 text-xs font-black uppercase tracking-[0.35em] text-orange-600">
+          <div
+            class="grid overflow-hidden rounded-md border border-neutral-300/80 bg-white shadow-[0_20px_55px_rgba(0,0,0,0.08)] lg:grid-cols-[1.15fr_0.85fr]"
+            data-micro-reveal
+          >
+            <form class="space-y-4 px-6 py-8 md:px-12 md:py-12" data-micro-reveal-group>
+              <p
+                class="mb-7 text-xs font-black uppercase tracking-[0.35em] text-orange-600"
+                data-micro-reveal-item
+              >
                 Send us a message
               </p>
 
-              <label class="block">
-                <span class="text-xs font-black uppercase tracking-[0.18em] text-neutral-700">
+              <label class="block" data-micro-reveal-item>
+                <span
+                  class="text-xs font-black uppercase tracking-[0.18em] text-neutral-700"
+                >
                   Full Name
                 </span>
                 <input
@@ -76,8 +100,10 @@ const contactDetails = [
                 />
               </label>
 
-              <label class="block">
-                <span class="text-xs font-black uppercase tracking-[0.18em] text-neutral-700">
+              <label class="block" data-micro-reveal-item>
+                <span
+                  class="text-xs font-black uppercase tracking-[0.18em] text-neutral-700"
+                >
                   Email Address
                 </span>
                 <input
@@ -88,8 +114,10 @@ const contactDetails = [
                 />
               </label>
 
-              <label class="block">
-                <span class="text-xs font-black uppercase tracking-[0.18em] text-neutral-700">
+              <label class="block" data-micro-reveal-item>
+                <span
+                  class="text-xs font-black uppercase tracking-[0.18em] text-neutral-700"
+                >
                   Phone Number
                 </span>
                 <input
@@ -100,8 +128,10 @@ const contactDetails = [
                 />
               </label>
 
-              <label class="block">
-                <span class="text-xs font-black uppercase tracking-[0.18em] text-neutral-700">
+              <label class="block" data-micro-reveal-item>
+                <span
+                  class="text-xs font-black uppercase tracking-[0.18em] text-neutral-700"
+                >
                   How Can We Help?
                 </span>
                 <textarea
@@ -115,57 +145,118 @@ const contactDetails = [
               <button
                 type="submit"
                 class="inline-flex w-full max-w-xs items-center justify-center gap-8 border border-orange-600 px-6 py-4 text-xs font-black uppercase tracking-wide text-black transition hover:bg-orange-600 hover:text-white sm:gap-12 sm:px-8"
+                data-micro-reveal-item
               >
                 Send Message
-                <span aria-hidden="true" class="text-lg leading-none text-orange-600 transition group-hover:text-white">→</span>
+                <span
+                  aria-hidden="true"
+                  class="text-lg leading-none text-orange-600 transition group-hover:text-white"
+                  >→</span
+                >
               </button>
             </form>
 
-            <aside class="border-t border-neutral-300/80 bg-neutral-50 px-6 py-8 md:px-12 md:py-12 lg:border-l lg:border-t-0">
-              <p class="mb-7 text-xs font-black uppercase tracking-[0.35em] text-orange-600">
+            <aside
+              class="border-t border-neutral-300/80 bg-neutral-50 px-6 py-8 md:px-12 md:py-12 lg:border-l lg:border-t-0"
+              data-micro-reveal-group
+            >
+              <p
+                class="mb-7 text-xs font-black uppercase tracking-[0.35em] text-orange-600"
+                data-micro-reveal-item
+              >
                 Contact Details
               </p>
 
               <div class="divide-y divide-neutral-300">
-                {contactDetails.map((item) => (
-                  <div class="flex gap-6 py-5 first:pt-0 last:pb-0">
-                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-orange-600 bg-transparent text-orange-600">
-                      {item.icon === "pin" && (
-                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
-                          <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                      )}
-                      {item.icon === "phone" && (
-                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.89.7 2.76a2 2 0 0 1-.45 2.11L8.09 9.86a16 16 0 0 0 6.05 6.05l1.27-1.27a2 2 0 0 1 2.11-.45c.87.35 1.8.57 2.76.7A2 2 0 0 1 22 16.92Z"></path>
-                        </svg>
-                      )}
-                      {item.icon === "mail" && (
-                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                          <path d="m3 7 9 6 9-6"></path>
-                        </svg>
-                      )}
-                      {item.icon === "instagram" && (
-                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <rect x="4" y="4" width="16" height="16" rx="4"></rect>
-                          <circle cx="12" cy="12" r="3.5"></circle>
-                          <circle cx="17" cy="7" r="0.7" fill="currentColor" stroke="none"></circle>
-                        </svg>
-                      )}
-                    </div>
+                {
+                  contactDetails.map((item) => (
+                    <div
+                      class="flex gap-6 py-5 first:pt-0 last:pb-0"
+                      data-micro-card
+                      data-micro-reveal-item
+                    >
+                      <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-orange-600 bg-transparent text-orange-600">
+                        {item.icon === "pin" && (
+                          <svg
+                            class="h-5 w-5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+                            <circle cx="12" cy="10" r="3" />
+                          </svg>
+                        )}
+                        {item.icon === "phone" && (
+                          <svg
+                            class="h-5 w-5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.89.7 2.76a2 2 0 0 1-.45 2.11L8.09 9.86a16 16 0 0 0 6.05 6.05l1.27-1.27a2 2 0 0 1 2.11-.45c.87.35 1.8.57 2.76.7A2 2 0 0 1 22 16.92Z" />
+                          </svg>
+                        )}
+                        {item.icon === "mail" && (
+                          <svg
+                            class="h-5 w-5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <rect x="3" y="5" width="18" height="14" rx="2" />
+                            <path d="m3 7 9 6 9-6" />
+                          </svg>
+                        )}
+                        {item.icon === "instagram" && (
+                          <svg
+                            class="h-5 w-5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <rect x="4" y="4" width="16" height="16" rx="4" />
+                            <circle cx="12" cy="12" r="3.5" />
+                            <circle
+                              cx="17"
+                              cy="7"
+                              r="0.7"
+                              fill="currentColor"
+                              stroke="none"
+                            />
+                          </svg>
+                        )}
+                      </div>
 
-                    <div>
-                      <h2 class="mb-2 text-xs font-black uppercase tracking-[0.18em] text-neutral-800">
-                        {item.label}
-                      </h2>
-                      {item.lines.map((line) => (
-                        <p class="text-sm font-semibold leading-6 text-neutral-600">{line}</p>
-                      ))}
+                      <div>
+                        <h2 class="mb-2 text-xs font-black uppercase tracking-[0.18em] text-neutral-800">
+                          {item.label}
+                        </h2>
+                        {item.lines.map((line) => (
+                          <p class="text-sm font-semibold leading-6 text-neutral-600">
+                            {line}
+                          </p>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))
+                }
               </div>
             </aside>
           </div>
@@ -173,29 +264,43 @@ const contactDetails = [
       </section>
 
       <section class="bg-[#191919] text-white">
-        <div class="relative min-h-[25rem] overflow-hidden px-6 pb-20 pt-24 md:px-16 md:pt-28">
+        <div
+          class="relative min-h-[25rem] overflow-hidden px-6 pb-20 pt-24 md:px-16 md:pt-28"
+        >
           <iframe
             title="Rokk Lab location map"
             src="https://www.google.com/maps?q=908%20Canning%20Hwy%20Applecross%206153&output=embed"
             class="absolute inset-0 h-full w-full border-0 opacity-70 grayscale invert"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
           <div class="absolute inset-0 bg-black/10"></div>
 
           <div class="relative z-10 mx-auto max-w-7xl">
-            <div class="max-w-md">
-              <h2 class="mb-6 text-3xl font-black leading-tight md:text-4xl">
+            <div class="max-w-md" data-micro-reveal-group>
+              <h2
+                class="mb-6 text-3xl font-black leading-tight md:text-4xl"
+                data-micro-reveal-item
+              >
                 Visit us in Applecross.
               </h2>
 
-              <p class="max-w-sm text-sm font-semibold leading-7 text-neutral-300">
+              <p
+                class="max-w-sm text-sm font-semibold leading-7 text-neutral-300"
+                data-micro-reveal-item
+              >
                 We're located on Canning Hwy with ample parking available.
               </p>
 
-              <div class="mt-8 h-px w-12 bg-white/35"></div>
+              <div
+                class="mt-8 h-px w-12 bg-white/35"
+                data-micro-line
+                data-micro-reveal-item
+              ></div>
 
-              <p class="mt-8 text-sm font-semibold leading-7 text-neutral-200">
+              <p
+                class="mt-8 text-sm font-semibold leading-7 text-neutral-200"
+                data-micro-reveal-item
+              >
                 908 Canning Hwy<br />Applecross WA 6153
               </p>
             </div>
@@ -207,12 +312,20 @@ const contactDetails = [
             fill="currentColor"
             aria-hidden="true"
           >
-            <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"></path>
+            <path
+              d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"
+            ></path>
           </svg>
         </div>
       </section>
     </main>
 
     <Footer />
+
+    <script>
+      import { initAnimations } from "../../scripts/animations";
+
+      initAnimations();
+    </script>
   </body>
 </html>

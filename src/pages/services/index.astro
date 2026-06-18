@@ -1,13 +1,22 @@
 ---
 import "../../styles/global.css";
-import Header from "../../components/landing/header.astro";
-import Footer from "../../components/footer.astro";
+import Header from "../../components/global/header.astro";
+import Footer from "../../components/global/footer.astro";
+import Button from "../../components/landing/button.astro";
+import servicesHero from "../../assets/services/services-hero.png";
+import servicesColourIcon from "../../assets/icons/services-page-colour.png";
+import servicesCutIcon from "../../assets/icons/services-page-cut.png";
+import servicesStyleIcon from "../../assets/icons/services-page-style.png";
+import servicesTreatmentsIcon from "../../assets/icons/services-page-treatments.png";
+
+const bookingUrl =
+  "https://booking.clientdiary.com/?bookingsUrl=RokkLab&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn9FErYtiyf2PHYkbbmUEiDdfX4kKj7467IwK1oOtJ28Sg-mF-_6AGlJuuR6c_aem_wew15SLhLb1jQXxDGi8fpg";
 
 const categories = [
   {
     label: "Colour",
     key: "colour",
-    image: "/images/services-page-colour.png",
+    image: servicesColourIcon,
     services: [
       { name: "Root Retouch", price: "$105-$115" },
       { name: "Full Colour", price: "$125-$165" },
@@ -23,7 +32,7 @@ const categories = [
   {
     label: "Cuts",
     key: "cuts",
-    image: "/images/services-page-cut.png",
+    image: servicesCutIcon,
     services: [
       { name: "First Visit Curly Cut and Style", price: "$175" },
       { name: "First Visit Cut and Blow Dry", price: "$160" },
@@ -36,7 +45,7 @@ const categories = [
   {
     label: "Styling",
     key: "styling",
-    image: "/images/services-page-style.png",
+    image: servicesStyleIcon,
     services: [
       { name: "Blow dry long hair", price: "$85" },
       { name: "Blow dry Medium Hair", price: "$65" },
@@ -51,7 +60,7 @@ const categories = [
   {
     label: "Treatments & Add-Ons",
     key: "treatments",
-    image: "/images/services-page-treatments.png",
+    image: servicesTreatmentsIcon,
     services: [
       { name: "Nanoplasty Long Hair", price: "$550" },
       { name: "Nanoplasty Medium Hair", price: "$450" },
@@ -66,44 +75,143 @@ const categories = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Services | Rokk Lab</title>
   </head>
 
   <body class="bg-neutral-200 font-sans text-black">
     <main>
-      <section
-        class="relative bg-neutral-200 px-6 pb-16 pt-44 text-black md:px-16 lg:pb-20 lg:pt-44"
-      >
+      <section class="relative min-h-screen overflow-hidden bg-neutral-200">
         <Header />
 
+        <div class="pointer-events-none absolute inset-0 md:hidden">
+          <img
+            src={servicesHero.src}
+            alt=""
+            class="h-full w-full origin-top-left scale-110 object-cover object-[66%_top]"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-neutral-100 via-neutral-100/95 via-[52%] to-neutral-100/70"
+          >
+          </div>
+          <div
+            class="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-neutral-100/95 via-neutral-100/35 to-transparent"
+          >
+          </div>
+          <div
+            class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-neutral-200/80 to-transparent"
+          >
+          </div>
+        </div>
+
+        <div
+          class="pointer-events-none absolute inset-y-0 right-0 hidden w-full items-start justify-end md:right-20 md:flex md:w-[74%]"
+        >
+          <div class="relative h-[calc(100%+3rem)] w-full -translate-y-12">
+            <img
+              src={servicesHero.src}
+              alt="Blonde salon upstyle in the Rokk Lab reception"
+              class="h-full w-full origin-top-left scale-110 object-cover object-[66%_top]"
+              style="-webkit-mask-image: linear-gradient(to right, transparent 0%, black 46%, black 84%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 46%, black 84%, transparent 100%); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"
+            />
+            <div
+              class="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-neutral-200 via-neutral-200/90 via-45% to-transparent"
+            >
+            </div>
+            <div
+              class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-neutral-200 via-neutral-200/30 to-transparent"
+            >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="relative z-10 mx-auto grid min-h-screen max-w-7xl items-center px-6 pb-16 pt-44 md:grid-cols-2 md:px-16 md:pb-0 md:pt-30 md:items-start"
+        >
+          <div class="relative z-10 max-w-xl md:mt-8" data-micro-reveal-group>
+            <p
+              class="mb-6 text-xs font-bold uppercase tracking-[0.35em] text-orange-600"
+              data-micro-reveal-item
+            >
+              Our Services
+            </p>
+
+            <h1
+              class="mb-6 text-5xl font-black uppercase leading-[0.95] tracking-normal text-black sm:text-6xl md:text-7xl"
+              data-micro-reveal-item
+            >
+              Expert Care. Beautiful Results.
+            </h1>
+
+            <p
+              class="mb-8 max-w-md text-sm leading-7 text-neutral-700 sm:text-base"
+              data-micro-reveal-item
+            >
+              From precision cuts to lived-in colour and nourishing treatments,
+              every service is tailored to you and delivered with care,
+              creativity, and attention to detail.
+            </p>
+
+            <div data-micro-reveal-item>
+              <Button href={bookingUrl}>Book Your Appointment</Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-neutral-200 px-6 py-16 text-black md:px-16 lg:py-20">
         <div class="mx-auto max-w-5xl">
-          <div class="mx-auto mb-10 max-w-4xl text-center md:mb-12">
-            <p class="text-xs font-black uppercase tracking-[0.35em] text-orange-600">
+          <div
+            class="mx-auto mb-10 max-w-4xl text-center md:mb-12"
+          >
+            <p
+              class="text-xs font-black uppercase tracking-[0.35em] text-orange-600"
+            >
               Our Price Guide
             </p>
-            <div class="mx-auto mt-4 h-px w-28 bg-orange-600"></div>
+            <div
+              class="mx-auto mt-4 h-px w-28 bg-orange-600"
+              data-micro-line
+              data-micro-line-origin="center"
+            ></div>
 
-            <h1 class="mt-7 text-1xl font-black uppercase leading-none text-black md:text-4xl">
+            <h1
+              class="mt-7 text-1xl font-black uppercase leading-none text-black md:text-4xl"
+            >
               Menu
             </h1>
 
-            <div class="mx-auto mt-7 max-w-3xl space-y-4 text-sm font-semibold leading-7 text-neutral-600">
+            <div
+              class="mx-auto mt-7 max-w-3xl space-y-4 text-sm font-semibold leading-7 text-neutral-600"
+            >
               <p>
                 Final cost will vary depending on the services performed,
                 experience level of stylist and product used.
               </p>
 
               <div class="flex items-center justify-center gap-6">
-                <span class="hidden h-px w-12 bg-orange-600 md:block"></span>
+                <span
+                  class="hidden h-px w-12 bg-orange-600 md:block"
+                  data-micro-line
+                  data-micro-line-origin="right"
+                ></span>
                 <p>A free consultation and quote prior is recommended.</p>
-                <span class="hidden h-px w-12 bg-orange-600 md:block"></span>
+                <span
+                  class="hidden h-px w-12 bg-orange-600 md:block"
+                  data-micro-line
+                  data-micro-line-origin="left"
+                ></span>
               </div>
             </div>
           </div>
 
-          <div class="overflow-hidden rounded-md border border-neutral-300/80 bg-white shadow-[0_20px_55px_rgba(0,0,0,0.08)]">
-            <div class="grid grid-cols-2 border-b border-neutral-300/80 md:grid-cols-4">
+          <div
+            class="overflow-hidden rounded-md border border-neutral-300/80 bg-white shadow-[0_20px_55px_rgba(0,0,0,0.08)]"
+            data-micro-reveal
+          >
+            <div
+              class="grid grid-cols-2 border-b border-neutral-300/80 md:grid-cols-4"
+            >
               {
                 categories.map((category, index) => (
                   <button
@@ -127,9 +235,13 @@ const categories = [
                   <div
                     data-tab-panel={category.key}
                     class={index === 0 ? "block" : "hidden"}
+                    data-micro-reveal-group={index === 0 ? true : undefined}
                   >
                     {category.services.map((service) => (
-                      <div class="grid items-center border-b border-neutral-200 py-3 last:border-b-0 md:grid-cols-[1.1fr_0.75fr] md:gap-8">
+                      <div
+                        class="grid items-center border-b border-neutral-200 py-3 last:border-b-0 md:grid-cols-[1.1fr_0.75fr] md:gap-8"
+                        data-micro-reveal-item
+                      >
                         <p class="break-words text-xs font-medium uppercase tracking-[0.12em] text-neutral-700 md:tracking-[0.18em]">
                           {service.name}
                         </p>
@@ -145,8 +257,11 @@ const categories = [
             </div>
           </div>
 
-          <p class="mt-8 text-center text-xs font-semibold leading-6 text-neutral-600">
-            Prices are a guide only and may vary. Ask our team for a personalised quote.
+          <p
+            class="mt-8 text-center text-xs font-semibold leading-6 text-neutral-600"
+          >
+            Prices are a guide only and may vary. Ask our team for a
+            personalised quote.
           </p>
         </div>
       </section>
@@ -164,11 +279,19 @@ const categories = [
 
           buttons.forEach((item) => {
             item.classList.remove("bg-orange-600", "text-white");
-            item.classList.add("bg-white", "text-black", "hover:bg-neutral-100");
+            item.classList.add(
+              "bg-white",
+              "text-black",
+              "hover:bg-neutral-100",
+            );
           });
 
           button.classList.add("bg-orange-600", "text-white");
-          button.classList.remove("bg-white", "text-black", "hover:bg-neutral-100");
+          button.classList.remove(
+            "bg-white",
+            "text-black",
+            "hover:bg-neutral-100",
+          );
 
           panels.forEach((panel) => {
             const isSelected =
@@ -179,6 +302,12 @@ const categories = [
           });
         });
       });
+    </script>
+
+    <script>
+      import { initAnimations } from "../../scripts/animations";
+
+      initAnimations();
     </script>
   </body>
 </html>

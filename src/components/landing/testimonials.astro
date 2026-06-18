@@ -1,0 +1,146 @@
+---
+const testimonials = [
+  "Ivan doesn't have a hair brush and a hair drier - but a magic wand! Ivan is amazing. For someone who has been getting foils in my hair for over twenty years, Ivan was able to achieve the same, if not better hair colour without the harsh foils - amazing but true. My hair has never been in better condition.",
+  "The best hairdresser in town! I would not go anywhere else. Ivan and Brad are extremely knowledgable and professional. They take the time to listen to you and understand what you want your hair to look like. Amazing place.",
+  "I have been visiting Ivan for over a year now and there is no person I trust more with my hair than Ivan. Ivan is a great professional, from the moment you sit down with him he takes his time to analyze the proposal and the hair of each client, in order to always keep the hair healthy and recommend products to maintain the color or treatment you need. If I could I would give it 10 stars. Highly recommend.",
+  "In Ivan I have found an outstanding stylist that tends to my hair and truly cares about the quality and longevity of his work. I have complete faith in his knowledge and trust his advice. I am very particular with my hair and he is wonderfully patient and masterful in his approach to creating a look that I love. This wonderful human deserves every success and provides an in salon experience like no other, thank you Ivan for all that you say and do.",
+  "Ivan is so fantastic at what he does, and such a friendly, lovely person. I feel like a supermodel every time I leave his salon. I have been getting my hair done from him for about 6 years, and have followed him whenever he moved.",
+  "I highly recommend Rokk Lab, both Brad and Ivan are amazing! The salon is such a welcoming and friendly environment. There is a high level of attention to detail and I am always so happy with my hair after every appointment.",
+  "Booked in here because I was staying in the area and the reviews were good and feel like I hit the jackpot. Unfortunately now I am going to have to make a special trip to Perth just to get my hair done because I don't think I can go anywhere else. Ivan was so approachable and had amazing knowledge of curly hair. He was not judgemental and I left with lots of good advice.",
+];
+---
+
+<section id="testimonials" class="bg-white px-6 py-16 text-black md:px-16 lg:py-20">
+  <div class="mx-auto max-w-7xl">
+    <div class="mx-auto max-w-3xl text-center" data-micro-reveal-group>
+      <p
+        class="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-orange-600"
+        data-micro-reveal-item
+      >
+        Client love
+      </p>
+
+      <h2
+        class="text-4xl font-black uppercase leading-tight text-black sm:text-5xl lg:text-[3.35rem]"
+        data-micro-reveal-item
+      >
+        What our clients say
+      </h2>
+
+      <p
+        class="mx-auto mt-5 max-w-xl text-base font-semibold leading-7 text-neutral-600"
+        data-micro-reveal-item
+      >
+        100+ reviews, all 5 star.
+      </p>
+    </div>
+
+    <div class="relative mt-11 px-12 md:px-14" data-testimonials-carousel>
+      <button
+        type="button"
+        class="absolute left-0 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-black/20 bg-white text-4xl font-normal leading-none text-black shadow-[0_12px_30px_rgba(0,0,0,0.08)] transition hover:border-orange-600 hover:bg-orange-600 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-600"
+        aria-label="Show previous testimonials"
+        data-testimonials-prev
+      >
+        <span aria-hidden="true">&#8249;</span>
+      </button>
+
+      <div class="overflow-hidden">
+        <div
+          class="flex gap-4 transition-transform duration-500 ease-out md:gap-5"
+          data-testimonials-track
+          data-micro-reveal-group
+        >
+          {
+            testimonials.map((testimonial, index) => (
+              <article
+                class="flex min-h-80 shrink-0 basis-full flex-col justify-between bg-[#242424] px-6 py-7 text-center shadow-[0_18px_45px_rgba(0,0,0,0.08)] md:basis-[calc((100%-1.25rem)/2)] lg:basis-[calc((100%-2.5rem)/3)]"
+                aria-label={`Testimonial ${index + 1} of ${testimonials.length}`}
+                data-testimonial-card
+                data-micro-card
+                data-micro-reveal-item
+              >
+                <p class="text-sm font-semibold leading-7 text-white">
+                  {testimonial}
+                </p>
+
+                <div
+                  class="mt-6 text-lg font-black leading-none tracking-[0.18em] text-orange-500"
+                  aria-label="5 out of 5 stars"
+                >
+                  <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="absolute right-0 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center border border-black/20 bg-white text-4xl font-normal leading-none text-black shadow-[0_12px_30px_rgba(0,0,0,0.08)] transition hover:border-orange-600 hover:bg-orange-600 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-600"
+        aria-label="Show next testimonials"
+        data-testimonials-next
+      >
+        <span aria-hidden="true">&#8250;</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const testimonialCarousels = document.querySelectorAll<HTMLElement>(
+    "[data-testimonials-carousel]",
+  );
+
+  const getVisibleCount = () => {
+    if (window.matchMedia("(min-width: 1024px)").matches) return 3;
+    if (window.matchMedia("(min-width: 768px)").matches) return 2;
+    return 1;
+  };
+
+  testimonialCarousels.forEach((carousel) => {
+    const track = carousel.querySelector<HTMLElement>(
+      "[data-testimonials-track]",
+    );
+    const cards = Array.from(
+      carousel.querySelectorAll<HTMLElement>("[data-testimonial-card]"),
+    );
+    const previousButton = carousel.querySelector<HTMLButtonElement>(
+      "[data-testimonials-prev]",
+    );
+    const nextButton = carousel.querySelector<HTMLButtonElement>(
+      "[data-testimonials-next]",
+    );
+
+    if (!track || !previousButton || !nextButton || !cards.length) return;
+
+    let activeIndex = 0;
+
+    const updateCarousel = () => {
+      const visibleCount = getVisibleCount();
+      const maxIndex = Math.max(cards.length - visibleCount, 0);
+
+      activeIndex = Math.min(Math.max(activeIndex, 0), maxIndex);
+      const offset = cards[activeIndex].offsetLeft - cards[0].offsetLeft;
+      track.style.transform = `translateX(-${offset}px)`;
+    };
+
+    previousButton.addEventListener("click", () => {
+      const visibleCount = getVisibleCount();
+      const maxIndex = Math.max(cards.length - visibleCount, 0);
+      activeIndex = activeIndex === 0 ? maxIndex : activeIndex - 1;
+      updateCarousel();
+    });
+
+    nextButton.addEventListener("click", () => {
+      const visibleCount = getVisibleCount();
+      const maxIndex = Math.max(cards.length - visibleCount, 0);
+      activeIndex = activeIndex >= maxIndex ? 0 : activeIndex + 1;
+      updateCarousel();
+    });
+
+    window.addEventListener("resize", updateCarousel);
+    updateCarousel();
+  });
+</script>

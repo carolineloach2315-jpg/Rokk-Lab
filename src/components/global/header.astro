@@ -1,0 +1,47 @@
+---
+import Button from "../../components/landing/button.astro";
+import rokkLabLogo from "../../assets/logos/rokk-lab-logo.png";
+
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+---
+
+<header class="absolute left-0 top-0 z-20 w-full px-6 py-6 md:px-16 md:py-8">
+  <div
+    class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-5 md:flex-row md:flex-nowrap md:justify-between"
+  >
+    <a href="/" aria-label="Rokk Lab home">
+      <img src={rokkLabLogo.src} alt="Rokk Lab" class="h-12 w-auto md:h-16" />
+    </a>
+
+    <nav
+      class="flex w-full flex-wrap items-center justify-center gap-x-6 gap-y-3 md:w-auto md:justify-start md:gap-10"
+    >
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class={`text-[11px] font-bold uppercase tracking-wide transition hover:text-orange-600 md:text-xs ${
+              currentPath === item.href ? "text-orange-600" : "text-black"
+            }`}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="hidden md:block">
+      <Button
+        href="https://booking.clientdiary.com/?bookingsUrl=RokkLab&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn9FErYtiyf2PHYkbbmUEiDdfX4kKj7467IwK1oOtJ28Sg-mF-_6AGlJuuR6c_aem_wew15SLhLb1jQXxDGi8fpg"
+        variant="outline">Book Now</Button
+      >
+    </div>
+  </div>
+</header>

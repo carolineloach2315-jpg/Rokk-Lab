@@ -2,57 +2,34 @@
 import "../styles/global.css";
 import Hero from "../components/landing/hero.astro";
 import About from "../components/landing/about.astro";
+import FeaturedLooks from "../components/landing/featured-looks.astro";
+import Testimonials from "../components/landing/testimonials.astro";
+import AboutStory from "../components/landing/about-story.astro";
 import BookingCta from "../components/landing/booking-cta.astro";
-import Footer from "../components/footer.astro";
+import Footer from "../components/global/footer.astro";
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Rokk Lab</title>
   </head>
 
   <body class="bg-white font-sans text-black">
     <Hero />
-    <div data-scroll-fade class="opacity-0 translate-y-10 transition-all duration-700 ease-out">
-      <About />
-    </div>
-    <div data-scroll-fade class="opacity-0 translate-y-10 transition-all duration-700 ease-out">
-      <BookingCta />
-    </div>
-    <div data-scroll-fade class="opacity-0 translate-y-10 transition-all duration-700 ease-out">
-      <Footer />
-    </div>
-  
+    <About />
+    <FeaturedLooks />
+    <Testimonials />
+    <AboutStory />
+    <BookingCta />
+    <Footer />
 
-<script>
-  const fadeSections = document.querySelectorAll<HTMLElement>("[data-scroll-fade]");
+    <script>
+      import { initAnimations } from "../scripts/animations";
 
-  const revealSection = (section: HTMLElement) => {
-    section.classList.remove("opacity-0", "translate-y-10");
-    section.classList.add("opacity-100", "translate-y-0");
-  };
-
-  if ("IntersectionObserver" in window) {
-    const sectionObserver = new IntersectionObserver(
-      (entries: IntersectionObserverEntry[]) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            revealSection(entry.target as HTMLElement);
-            sectionObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.18 }
-    );
-
-    fadeSections.forEach((section) => sectionObserver.observe(section));
-  } else {
-    fadeSections.forEach(revealSection);
-  }
-</script>
-
+      initAnimations();
+    </script>
   </body>
 </html>
