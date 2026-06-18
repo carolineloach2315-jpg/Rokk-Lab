@@ -21,6 +21,14 @@
   button:hover {
     transform: translateY(-3px);
   }
+
+  [data-micro-reveal],
+  [data-micro-reveal-item],
+  [data-micro-image],
+  [data-micro-card],
+  [data-micro-line] {
+    will-change: transform, opacity;
+  }
 }
 
 @keyframes page-fade-in {
@@ -45,5 +53,13 @@
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  [data-micro-reveal],
+  [data-micro-reveal-item],
+  [data-micro-image],
+  [data-micro-card],
+  [data-micro-line] {
+    will-change: auto;
   }
 }

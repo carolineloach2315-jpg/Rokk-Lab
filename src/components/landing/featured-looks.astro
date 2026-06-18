@@ -36,26 +36,29 @@ const looks = [
   <div
     class="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:px-16 lg:grid-cols-[0.9fr_2.15fr] lg:items-center lg:gap-12 lg:py-20"
   >
-    <div class="max-w-md">
+    <div class="max-w-md" data-micro-reveal-group>
       <p
         class="mb-6 text-xs font-bold uppercase tracking-[0.35em] text-orange-600"
+        data-micro-reveal-item
       >
         Featured looks
       </p>
 
       <h2
         class="text-4xl font-black uppercase leading-tight text-black sm:text-5xl lg:text-[3.35rem]"
+        data-micro-reveal-item
       >
         Beautiful hair. Expertly crafted.
       </h2>
 
       <p
         class="mt-6 max-w-sm text-base font-semibold leading-7 text-neutral-600"
+        data-micro-reveal-item
       >
         A collection of real transformations and signature looks by our team.
       </p>
 
-      <div class="mt-9">
+      <div class="mt-9" data-micro-reveal-item>
         <Button href={bookingUrl} variant="outline">Book Now</Button>
       </div>
     </div>

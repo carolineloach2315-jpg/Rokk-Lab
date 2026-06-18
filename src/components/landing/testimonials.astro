@@ -12,16 +12,25 @@ const testimonials = [
 
 <section id="testimonials" class="bg-white px-6 py-16 text-black md:px-16 lg:py-20">
   <div class="mx-auto max-w-7xl">
-    <div class="mx-auto max-w-3xl text-center">
-      <p class="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-orange-600">
+    <div class="mx-auto max-w-3xl text-center" data-micro-reveal-group>
+      <p
+        class="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-orange-600"
+        data-micro-reveal-item
+      >
         Client love
       </p>
 
-      <h2 class="text-4xl font-black uppercase leading-tight text-black sm:text-5xl lg:text-[3.35rem]">
+      <h2
+        class="text-4xl font-black uppercase leading-tight text-black sm:text-5xl lg:text-[3.35rem]"
+        data-micro-reveal-item
+      >
         What our clients say
       </h2>
 
-      <p class="mx-auto mt-5 max-w-xl text-base font-semibold leading-7 text-neutral-600">
+      <p
+        class="mx-auto mt-5 max-w-xl text-base font-semibold leading-7 text-neutral-600"
+        data-micro-reveal-item
+      >
         100+ reviews, all 5 star.
       </p>
     </div>
@@ -40,6 +49,7 @@ const testimonials = [
         <div
           class="flex gap-4 transition-transform duration-500 ease-out md:gap-5"
           data-testimonials-track
+          data-micro-reveal-group
         >
           {
             testimonials.map((testimonial, index) => (
@@ -47,6 +57,8 @@ const testimonials = [
                 class="flex min-h-80 shrink-0 basis-full flex-col justify-between bg-[#242424] px-6 py-7 text-center shadow-[0_18px_45px_rgba(0,0,0,0.08)] md:basis-[calc((100%-1.25rem)/2)] lg:basis-[calc((100%-2.5rem)/3)]"
                 aria-label={`Testimonial ${index + 1} of ${testimonials.length}`}
                 data-testimonial-card
+                data-micro-card
+                data-micro-reveal-item
               >
                 <p class="text-sm font-semibold leading-7 text-white">
                   {testimonial}

@@ -128,41 +128,52 @@ const categories = [
         <div
           class="relative z-10 mx-auto grid min-h-screen max-w-7xl items-center px-6 pb-16 pt-44 md:grid-cols-2 md:px-16 md:pb-0 md:pt-30 md:items-start"
         >
-          <div class="relative z-10 max-w-xl md:mt-8">
+          <div class="relative z-10 max-w-xl md:mt-8" data-micro-reveal-group>
             <p
               class="mb-6 text-xs font-bold uppercase tracking-[0.35em] text-orange-600"
+              data-micro-reveal-item
             >
               Our Services
             </p>
 
             <h1
               class="mb-6 text-5xl font-black uppercase leading-[0.95] tracking-normal text-black sm:text-6xl md:text-7xl"
+              data-micro-reveal-item
             >
               Expert Care. Beautiful Results.
             </h1>
 
             <p
               class="mb-8 max-w-md text-sm leading-7 text-neutral-700 sm:text-base"
+              data-micro-reveal-item
             >
               From precision cuts to lived-in colour and nourishing treatments,
               every service is tailored to you and delivered with care,
               creativity, and attention to detail.
             </p>
 
-            <Button href={bookingUrl}>Book Your Appointment</Button>
+            <div data-micro-reveal-item>
+              <Button href={bookingUrl}>Book Your Appointment</Button>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="bg-neutral-200 px-6 py-16 text-black md:px-16 lg:py-20">
         <div class="mx-auto max-w-5xl">
-          <div class="mx-auto mb-10 max-w-4xl text-center md:mb-12">
+          <div
+            class="mx-auto mb-10 max-w-4xl text-center md:mb-12"
+          >
             <p
               class="text-xs font-black uppercase tracking-[0.35em] text-orange-600"
             >
               Our Price Guide
             </p>
-            <div class="mx-auto mt-4 h-px w-28 bg-orange-600"></div>
+            <div
+              class="mx-auto mt-4 h-px w-28 bg-orange-600"
+              data-micro-line
+              data-micro-line-origin="center"
+            ></div>
 
             <h1
               class="mt-7 text-1xl font-black uppercase leading-none text-black md:text-4xl"
@@ -179,15 +190,24 @@ const categories = [
               </p>
 
               <div class="flex items-center justify-center gap-6">
-                <span class="hidden h-px w-12 bg-orange-600 md:block"></span>
+                <span
+                  class="hidden h-px w-12 bg-orange-600 md:block"
+                  data-micro-line
+                  data-micro-line-origin="right"
+                ></span>
                 <p>A free consultation and quote prior is recommended.</p>
-                <span class="hidden h-px w-12 bg-orange-600 md:block"></span>
+                <span
+                  class="hidden h-px w-12 bg-orange-600 md:block"
+                  data-micro-line
+                  data-micro-line-origin="left"
+                ></span>
               </div>
             </div>
           </div>
 
           <div
             class="overflow-hidden rounded-md border border-neutral-300/80 bg-white shadow-[0_20px_55px_rgba(0,0,0,0.08)]"
+            data-micro-reveal
           >
             <div
               class="grid grid-cols-2 border-b border-neutral-300/80 md:grid-cols-4"
@@ -215,9 +235,13 @@ const categories = [
                   <div
                     data-tab-panel={category.key}
                     class={index === 0 ? "block" : "hidden"}
+                    data-micro-reveal-group={index === 0 ? true : undefined}
                   >
                     {category.services.map((service) => (
-                      <div class="grid items-center border-b border-neutral-200 py-3 last:border-b-0 md:grid-cols-[1.1fr_0.75fr] md:gap-8">
+                      <div
+                        class="grid items-center border-b border-neutral-200 py-3 last:border-b-0 md:grid-cols-[1.1fr_0.75fr] md:gap-8"
+                        data-micro-reveal-item
+                      >
                         <p class="break-words text-xs font-medium uppercase tracking-[0.12em] text-neutral-700 md:tracking-[0.18em]">
                           {service.name}
                         </p>
@@ -278,6 +302,12 @@ const categories = [
           });
         });
       });
+    </script>
+
+    <script>
+      import { initAnimations } from "../../scripts/animations";
+
+      initAnimations();
     </script>
   </body>
 </html>

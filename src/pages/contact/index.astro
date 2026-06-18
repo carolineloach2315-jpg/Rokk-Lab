@@ -43,22 +43,32 @@ const contactDetails = [
         <Header />
 
         <div class="mx-auto max-w-7xl">
-          <div class="mx-auto mb-10 max-w-3xl text-center md:mb-14">
+          <div
+            class="mx-auto mb-10 max-w-3xl text-center md:mb-14"
+            data-micro-reveal-group
+          >
             <p
               class="text-xs font-black uppercase tracking-[0.35em] text-orange-600"
+              data-micro-reveal-item
             >
               Contact Rokk Lab
             </p>
-            <div class="mx-auto mt-4 h-px w-28 bg-orange-600"></div>
+            <div
+              class="mx-auto mt-4 h-px w-28 bg-orange-600"
+              data-micro-line
+              data-micro-reveal-item
+            ></div>
 
             <h1
               class="mt-7 text-3xl font-black uppercase leading-none text-black md:text-4xl"
+              data-micro-reveal-item
             >
               Get in touch.
             </h1>
 
             <p
               class="mx-auto mt-6 max-w-2xl text-sm font-semibold leading-7 text-neutral-600"
+              data-micro-reveal-item
             >
               Send us a message, call the salon, or visit us in Applecross.
             </p>
@@ -66,15 +76,17 @@ const contactDetails = [
 
           <div
             class="grid overflow-hidden rounded-md border border-neutral-300/80 bg-white shadow-[0_20px_55px_rgba(0,0,0,0.08)] lg:grid-cols-[1.15fr_0.85fr]"
+            data-micro-reveal
           >
-            <form class="space-y-4 px-6 py-8 md:px-12 md:py-12">
+            <form class="space-y-4 px-6 py-8 md:px-12 md:py-12" data-micro-reveal-group>
               <p
                 class="mb-7 text-xs font-black uppercase tracking-[0.35em] text-orange-600"
+                data-micro-reveal-item
               >
                 Send us a message
               </p>
 
-              <label class="block">
+              <label class="block" data-micro-reveal-item>
                 <span
                   class="text-xs font-black uppercase tracking-[0.18em] text-neutral-700"
                 >
@@ -88,7 +100,7 @@ const contactDetails = [
                 />
               </label>
 
-              <label class="block">
+              <label class="block" data-micro-reveal-item>
                 <span
                   class="text-xs font-black uppercase tracking-[0.18em] text-neutral-700"
                 >
@@ -102,7 +114,7 @@ const contactDetails = [
                 />
               </label>
 
-              <label class="block">
+              <label class="block" data-micro-reveal-item>
                 <span
                   class="text-xs font-black uppercase tracking-[0.18em] text-neutral-700"
                 >
@@ -116,7 +128,7 @@ const contactDetails = [
                 />
               </label>
 
-              <label class="block">
+              <label class="block" data-micro-reveal-item>
                 <span
                   class="text-xs font-black uppercase tracking-[0.18em] text-neutral-700"
                 >
@@ -133,6 +145,7 @@ const contactDetails = [
               <button
                 type="submit"
                 class="inline-flex w-full max-w-xs items-center justify-center gap-8 border border-orange-600 px-6 py-4 text-xs font-black uppercase tracking-wide text-black transition hover:bg-orange-600 hover:text-white sm:gap-12 sm:px-8"
+                data-micro-reveal-item
               >
                 Send Message
                 <span
@@ -145,9 +158,11 @@ const contactDetails = [
 
             <aside
               class="border-t border-neutral-300/80 bg-neutral-50 px-6 py-8 md:px-12 md:py-12 lg:border-l lg:border-t-0"
+              data-micro-reveal-group
             >
               <p
                 class="mb-7 text-xs font-black uppercase tracking-[0.35em] text-orange-600"
+                data-micro-reveal-item
               >
                 Contact Details
               </p>
@@ -155,7 +170,11 @@ const contactDetails = [
               <div class="divide-y divide-neutral-300">
                 {
                   contactDetails.map((item) => (
-                    <div class="flex gap-6 py-5 first:pt-0 last:pb-0">
+                    <div
+                      class="flex gap-6 py-5 first:pt-0 last:pb-0"
+                      data-micro-card
+                      data-micro-reveal-item
+                    >
                       <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-orange-600 bg-transparent text-orange-600">
                         {item.icon === "pin" && (
                           <svg
@@ -257,20 +276,31 @@ const contactDetails = [
           <div class="absolute inset-0 bg-black/10"></div>
 
           <div class="relative z-10 mx-auto max-w-7xl">
-            <div class="max-w-md">
-              <h2 class="mb-6 text-3xl font-black leading-tight md:text-4xl">
+            <div class="max-w-md" data-micro-reveal-group>
+              <h2
+                class="mb-6 text-3xl font-black leading-tight md:text-4xl"
+                data-micro-reveal-item
+              >
                 Visit us in Applecross.
               </h2>
 
               <p
                 class="max-w-sm text-sm font-semibold leading-7 text-neutral-300"
+                data-micro-reveal-item
               >
                 We're located on Canning Hwy with ample parking available.
               </p>
 
-              <div class="mt-8 h-px w-12 bg-white/35"></div>
+              <div
+                class="mt-8 h-px w-12 bg-white/35"
+                data-micro-line
+                data-micro-reveal-item
+              ></div>
 
-              <p class="mt-8 text-sm font-semibold leading-7 text-neutral-200">
+              <p
+                class="mt-8 text-sm font-semibold leading-7 text-neutral-200"
+                data-micro-reveal-item
+              >
                 908 Canning Hwy<br />Applecross WA 6153
               </p>
             </div>
@@ -291,5 +321,11 @@ const contactDetails = [
     </main>
 
     <Footer />
+
+    <script>
+      import { initAnimations } from "../../scripts/animations";
+
+      initAnimations();
+    </script>
   </body>
 </html>
